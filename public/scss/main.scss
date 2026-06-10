@@ -8,6 +8,7 @@
 @use "standart";
 @use "form/all-form";
 @use "elements/all-elements";
+@use "placeholder";
 
 @use "current";
 
@@ -21,6 +22,5 @@
 
 // Иконка бургера
 // @use "burger-icon";
-
 
 @use "cookie";

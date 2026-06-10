@@ -1,0 +1,133 @@
+@use "vars" as *;
+
+.placeholder {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - #{$section_space * 2});
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        text-align: center;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        max-width: 760px;
+    }
+
+    &__logo {
+        display: block;
+        width: 180px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    h1 {
+        margin: 0;
+        color: $black_color;
+        font-size: clamp(28px, 4vw, 48px);
+        line-height: 1.1;
+    }
+
+    p {
+        margin: 0;
+        color: $black_color;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    &__bottom {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        width: 100%;
+    }
+
+    &__marketplace {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 24px 18px;
+        border-radius: $border_rad;
+        background-color: $gray_bg_color;
+        text-decoration: none;
+    }
+
+    &__marketplace-logo {
+        display: block;
+        width: 160px;
+        max-width: 100%;
+        height: 64px;
+        object-fit: contain;
+    }
+
+    &__marketplace-qr {
+        display: block;
+        width: 100%;
+        max-width: 180px;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 820px) {
+    .placeholder {
+        &__content {
+            gap: 32px;
+        }
+
+        &__bottom {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .placeholder {
+        &__content {
+            gap: 24px;
+        }
+
+        &__top {
+            gap: 20px;
+        }
+
+        &__logo {
+            width: 140px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        &__bottom {
+            grid-template-columns: 1fr;
+        }
+
+        &__marketplace {
+            padding: 20px 16px;
+        }
+
+        &__marketplace-logo {
+            width: 140px;
+            height: 56px;
+        }
+
+        &__marketplace-qr {
+            max-width: 160px;
+        }
+    }
+}
