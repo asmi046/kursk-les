@@ -42,6 +42,7 @@
         "vite": "^8.0.0"
     },
     "dependencies": {
-        "@vitejs/plugin-vue": "^6.0.7"
+        "@vitejs/plugin-vue": "^6.0.7",
+        "keen-slider": "^6.8.6"
     }
 }

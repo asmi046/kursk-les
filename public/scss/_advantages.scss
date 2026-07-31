@@ -1,0 +1,52 @@
+@use 'vars' as *;
+
+.advantages {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    &__item {
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: $card-rad;
+        background-color: $light-bg-color;
+        transition: $btn-transition;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: $box-shadow;
+        }
+    }
+
+    &__icon {
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 18px;
+
+        .sprite_icon {
+            width: 72px;
+            height: 72px;
+        }
+    }
+
+    &__title {
+        font-size: $fs-h3;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        color: #555;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: $bp_tablet) {
+    .advantages {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+    }
+}

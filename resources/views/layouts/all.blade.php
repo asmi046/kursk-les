@@ -31,8 +31,18 @@
 </head>
 
 <body>
+    {{-- SVG-спрайт иконок --}}
+    @php $spritePath = public_path('img/sprite/sprite.svg'); @endphp
+    @if (file_exists($spritePath))
+        {!! file_get_contents($spritePath) !!}
+    @endif
+
     <main id="main">
+        <x-site-header />
+
         @yield('main')
+
+        <x-site-footer />
     </main>
 </body>
 

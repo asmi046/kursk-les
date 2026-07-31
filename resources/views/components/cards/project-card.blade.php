@@ -1,0 +1,18 @@
+@props([
+    'image',
+    'alt' => null,
+    'title',
+    'href' => '#',
+])
+
+<a class="project-card" href="{{ $href }}">
+    <div class="project-card__media">
+        <img src="{{ $image }}" alt="{{ $alt ?? $title }}" loading="lazy">
+    </div>
+    <div class="project-card__body">
+        <span class="project-card__title">{{ $title }}</span>
+        <span class="project-card__arrow" aria-hidden="true">
+            <svg class="sprite_icon" focusable="false"><use xlink:href="#icon-arrow-green"></use></svg>
+        </span>
+    </div>
+</a>

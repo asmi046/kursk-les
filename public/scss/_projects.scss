@@ -1,0 +1,82 @@
+@use 'vars' as *;
+
+.projects {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: $card-rad;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: $box-shadow;
+    text-decoration: none;
+    color: inherit;
+    transition: $btn-transition;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 30px -16px rgba(0, 0, 0, .35);
+
+        .project-card__arrow {
+            transform: translateX(4px);
+        }
+    }
+
+    &__media {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+
+        img {
+            transition: $btn-transition;
+        }
+    }
+
+    &:hover &__media img {
+        transform: scale(1.06);
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 18px 20px;
+    }
+
+    &__title {
+        font-family: $head_fonts;
+        font-weight: 600;
+        font-size: $fs-base;
+        color: $black-color;
+    }
+
+    &__arrow {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        transition: $btn-transition;
+
+        .sprite_icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media (max-width: $bp_tablet) {
+    .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: $bp_mobile) {
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+}

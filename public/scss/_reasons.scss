@@ -1,0 +1,85 @@
+@use 'vars' as *;
+
+.reasons {
+    background-color: $light-bg-color;
+
+    &__head {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-size: $fs-h2;
+        font-weight: 700;
+    }
+
+    &__subtitle {
+        margin: 14px auto 0;
+        font-size: $fs-lead;
+        color: #555;
+        max-width: 620px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: $card-rad;
+        overflow: hidden;
+        box-shadow: $box-shadow;
+        transition: $btn-transition;
+
+        &:hover {
+            transform: translateY(-6px);
+        }
+    }
+
+    &__media {
+        aspect-ratio: 1 / 1;
+
+        img {
+            transition: $btn-transition;
+        }
+    }
+
+    &__item:hover &__media img {
+        transform: scale(1.05);
+    }
+
+    &__body {
+        padding: 20px;
+    }
+
+    &__item-title {
+        font-size: $fs-h3;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    &__item-text {
+        color: #555;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: $bp_tablet) {
+    .reasons {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: $bp_mobile) {
+    .reasons {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+    }
+}

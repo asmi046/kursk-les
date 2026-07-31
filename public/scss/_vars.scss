@@ -1,21 +1,60 @@
+// ===== Цвета =====
 $main_color: #325ea5;
 $hover_color: #273772;
 $sub_color: #5aa495;
 $black_color: #333;
 
-$gray_bg_color:#F5F5F5;
-$gray_border_color:#B4C5C5;
+// Фирменные цвета «Курский лес»
+$brand_green: #337b41;
+$brand_green_hover: #2a6534;
+$accent_green: #367a3a;
+$cream: #e9e6e0;
+$brown: #925e01;
 
-$main_transition: all .5s ease;
+$gray_bg_color: #f5f5f5;
+$gray_border_color: #b4c5c5;
+$light_bg_color: #f7f5f1;
 
-$main_fonts:'Roboto', sans-serif;
-$head_fonts:'Montserrat', sans-serif;
+$header_bg: #1f1f29;
 
-$border_rad: 10px;
+// ===== Переходы =====
+$main_transition: all 0.5s ease;
+$btn_transition: all 0.3s ease;
 
+// ===== Шрифты =====
+$main_fonts: "Roboto", sans-serif;
+$head_fonts: "Roboto", sans-serif;
+$deco_fonts: "Roboto", sans-serif;
+
+// ===== Радиусы =====
+$border_rad: 20px;
+$card_rad: 12px;
+$box_border_rad: 6px;
+
+// ===== Размеры / отступы =====
 $section_space: 20px;
+$section_space_lg: 80px;
 $conteiner_max_w: 1280px;
 
-$box_shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+$box_shadow:
+    0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
 $box_padding: 1.25rem;
-$box_border_rad: 6px;
+
+// ===== Размеры шрифтов =====
+$fs_h1: 48px;
+$fs_h2: 36px;
+$fs_h3: 24px;
+$fs_lead: 20px;
+$fs_base: 16px;
+$fs_small: 14px;
+
+$fs_hero_intro: 32px;
+$fs_hero_greet: 28px;
+
+// ===== Насыщенность шрифта =====
+$fw_light: 300;
+
+// ===== Брейкпоинты =====
+$bp_tablet: 820px;
+$bp_mobile: 520px;
