@@ -1,4 +1,4 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 .individual {
     background-color: $light-bg-color;
@@ -8,16 +8,13 @@
         grid-template-columns: 1fr 1.1fr;
         align-items: center;
         gap: 50px;
+        background-color: #fff;
+        border-radius: $card-rad;
+        padding: 20px;
     }
 
     &__content {
         max-width: 520px;
-    }
-
-    &__title {
-        font-size: $fs-h2;
-        font-weight: 700;
-        margin-bottom: 20px;
     }
 
     &__text {
@@ -88,6 +85,32 @@
         display: flex;
         gap: 14px;
         margin-top: 20px;
+        justify-content: flex-end;
+    }
+
+    .slider-nav--round {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 2px solid #367a3a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        .sprite_icon {
+            stroke: #367a3a;
+        }
+
+        &:hover {
+            background-color: #367a3a;
+            border-color: #367a3a;
+
+            .sprite_icon {
+                stroke: #fff;
+            }
+        }
     }
 }
 

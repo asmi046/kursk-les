@@ -1,6 +1,8 @@
 @use 'vars' as *;
 
 .categories {
+    background-color: $categories_bg;
+
     &__grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -9,10 +11,11 @@
 }
 
 .category-card {
+    position: relative;
     display: flex;
     flex-direction: column;
+    padding: 20px;
     border-radius: $card-rad;
-    overflow: hidden;
     background-color: #fff;
     box-shadow: $box-shadow;
     text-decoration: none;
@@ -29,8 +32,9 @@
     }
 
     &__media {
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 308 / 374;
         overflow: hidden;
+        border-radius: $card-rad;
 
         img {
             transition: $btn-transition;
@@ -44,9 +48,7 @@
     &__body {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 18px 20px;
+        padding: 18px 0;
     }
 
     &__title {
@@ -57,7 +59,9 @@
     }
 
     &__arrow {
-        flex-shrink: 0;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
         width: 36px;
         height: 36px;
         transition: $btn-transition;

@@ -13,18 +13,25 @@
     }
 
     &__col-title {
-        font-size: $fs-h3;
+        font-size: 18px;
         font-weight: 700;
         margin-bottom: 20px;
     }
 
     &__logo {
-        width: 160px;
-        margin-bottom: 18px;
+        width: 100%;
+        margin-bottom: 0;
 
         img {
             display: block;
+            width: 100%;
+            height: auto;
         }
+    }
+
+    &__brand {
+        display: flex;
+        flex-direction: column;
     }
 
     &__about-text {
@@ -67,33 +74,34 @@
                 color: #fff;
             }
         }
-    }
 
-    &__social {
-        display: flex;
-        gap: 12px;
-        margin-top: 16px;
-    }
-
-    &__messenger {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        color: #fff;
-        background-color: rgba(255, 255, 255, .12);
-        transition: $btn-transition;
-
-        .sprite_icon {
-            width: 24px;
-            height: 24px;
+        .site-header__actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 16px;
         }
 
-        &:hover {
-            background-color: $brand_green;
-            transform: translateY(-2px);
+        .site-header__messenger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: $brand-green;
+            background-color: transparent;
+            transition: $btn-transition;
+
+            .sprite_icon {
+                width: 22px;
+                height: 22px;
+            }
+
+            &:hover {
+                color: $cream;
+                transform: translateY(-2px);
+            }
         }
     }
 

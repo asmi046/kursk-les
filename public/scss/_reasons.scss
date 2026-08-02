@@ -1,59 +1,31 @@
 @use 'vars' as *;
 
 .reasons {
-    background-color: $light-bg-color;
-
-    &__head {
-        text-align: center;
-        margin-bottom: 40px;
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
     }
 
-    &__title {
-        font-size: $fs-h2;
-        font-weight: 700;
+    &__content {
+        display: flex;
+        flex-direction: column;
     }
 
-    &__subtitle {
-        margin: 14px auto 0;
-        font-size: $fs-lead;
-        color: #555;
-        max-width: 620px;
+    .section-head {
+        margin-bottom: 30px;
     }
 
     &__list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 24px;
     }
 
     &__item {
         display: flex;
         flex-direction: column;
-        background-color: #fff;
-        border-radius: $card-rad;
-        overflow: hidden;
-        box-shadow: $box-shadow;
-        transition: $btn-transition;
-
-        &:hover {
-            transform: translateY(-6px);
-        }
-    }
-
-    &__media {
-        aspect-ratio: 1 / 1;
-
-        img {
-            transition: $btn-transition;
-        }
-    }
-
-    &__item:hover &__media img {
-        transform: scale(1.05);
-    }
-
-    &__body {
-        padding: 20px;
     }
 
     &__item-title {
@@ -66,19 +38,39 @@
         color: #555;
         line-height: 1.6;
     }
+
+    &__media {
+        background-color: #F3EBE9;
+        padding: 20px;
+        border-radius: $card-rad;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    &__img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: $card-rad;
+    }
 }
 
 @media (max-width: $bp_tablet) {
     .reasons {
-        &__list {
-            grid-template-columns: repeat(2, 1fr);
+        &__inner {
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
     }
 }
 
 @media (max-width: $bp_mobile) {
     .reasons {
-        &__list {
+        &__grid {
             grid-template-columns: 1fr;
         }
     }

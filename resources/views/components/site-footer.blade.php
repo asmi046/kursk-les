@@ -5,18 +5,6 @@
                 <a class="site-footer__logo" href="{{ route('home') }}" aria-label="Курский Лес — на главную">
                     <img src="{{ asset('/img/logo/logo_white.svg') }}" alt="Курский Лес" width="160" height="64">
                 </a>
-                <p class="site-footer__about-text">
-                    Производственная компания «Курский Лес». Изделия из массива дерева:
-                    от наборов для творчества до индивидуальных заказов.
-                </p>
-                <div class="site-footer__social">
-                    <a class="site-footer__messenger" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
-                        <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-tg"></use></svg>
-                    </a>
-                    <a class="site-footer__messenger" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="Написать в MAX">
-                        <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-max"></use></svg>
-                    </a>
-                </div>
             </div>
 
             <nav class="site-footer__menu" aria-label="Категории">
@@ -44,6 +32,14 @@
                 <a href="tel:+70000000000">+7 (000) 000-00-00</a>
                 <a href="mailto:info@kursk-les.ru">info@kursk-les.ru</a>
                 <p class="site-footer__about-text">г. Курск, Россия</p>
+                <div class="site-header__actions">
+                    <a class="site-header__messenger" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="Написать в MAX">
+                        <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-max"></use></svg>
+                    </a>
+                    <a class="site-header__messenger" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
+                        <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-tg"></use></svg>
+                    </a>
+                </div>
             </div>
         </div>
 

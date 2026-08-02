@@ -5,25 +5,25 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
+        margin-top: 50px;
     }
 
     &__item {
+        position: relative;
         text-align: center;
-        padding: 30px 20px;
+        padding: 64px 20px 28px;
+        border: 1px solid $adv_border;
         border-radius: $card-rad;
-        background-color: $light-bg-color;
-        transition: $btn-transition;
-
-        &:hover {
-            transform: translateY(-4px);
-            box-shadow: $box-shadow;
-        }
     }
 
+    // Иконка по центру, выступает на 50% вверх за пределы блока
     &__icon {
-        display: inline-flex;
-        justify-content: center;
-        margin-bottom: 18px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 10px 20px;
 
         .sprite_icon {
             width: 72px;
@@ -32,14 +32,22 @@
     }
 
     &__title {
-        font-size: $fs-h3;
+        font-size: $fs_h3;
         font-weight: 700;
-        margin-bottom: 12px;
+        margin-bottom: 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 130px;
+            height: 1px;
+            background-color: $adv_border;
+            margin: 14px auto 14px;
+        }
     }
 
     &__text {
         color: #555;
-        line-height: 1.6;
     }
 }
 

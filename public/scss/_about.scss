@@ -1,6 +1,8 @@
 @use 'vars' as *;
 
 .about {
+    background-color: #F3EBE9;
+
     &__inner {
         display: grid;
         grid-template-columns: 1fr 1.1fr;
@@ -8,65 +10,21 @@
         gap: 50px;
     }
 
-    &__title {
-        font-size: $fs-h2;
-        font-weight: 700;
-        margin-bottom: 20px;
+    &__content {
+        max-width: 600px;
     }
 
-    &__text {
-        font-size: $fs-base;
-        line-height: 1.7;
-        color: #555;
-        margin-bottom: 16px;
-    }
-
-    // Видео-заглушка
     &__media {
         position: relative;
-        aspect-ratio: 16 / 10;
         border-radius: $card-rad;
         overflow: hidden;
-        background: linear-gradient(135deg, #2f3b30, #4a5a48);
-        display: flex;
-        align-items: center;
-        justify-content: center;
         box-shadow: $box-shadow;
     }
 
-    &__media-placeholder {
-        color: rgba(255, 255, 255, .8);
-        text-align: center;
-        font-family: $head_fonts;
-    }
-
-    &__play {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 84px;
-        height: 84px;
-        margin: 0 auto 16px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, .2);
-        border: 2px solid #fff;
-        transition: $btn-transition;
-
-        &::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-            border-left: 18px solid #fff;
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            margin-left: 5px;
-        }
-    }
-
-    &__media:hover &__play {
-        background-color: $brand-green;
-        transform: scale(1.05);
+    &__video {
+        display: block;
+        width: 100%;
+        border-radius: $card-rad;
     }
 }
 
