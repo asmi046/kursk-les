@@ -273,14 +273,21 @@
     {{-- ===================== НАГРАДЫ И СЕРТИФИКАТЫ ===================== --}}
     <section id="certificates" class="certificates" aria-label="Награды и сертификаты">
         <div class="container">
-            <div class="certificates__head">
-                <h2 class="certificates__title">Награды и сертификаты</h2>
-                <p class="certificates__subtitle">
-                    Качество нашей продукции подтверждено наградами и сертификатами.
-                </p>
-            </div>
+            <h2 class="section-head">Награды и сертификаты</h2>
 
             <div class="certificates__slider keen-slider" id="certificates-slider" aria-label="Награды и сертификаты">
+                <div class="certificates__slide keen-slider__slide">
+                    <img src="{{ asset('/img/certificates/cert_1.webp') }}" alt="Сертификат 1" loading="lazy">
+                </div>
+                <div class="certificates__slide keen-slider__slide">
+                    <img src="{{ asset('/img/certificates/cert_2.webp') }}" alt="Сертификат 2" loading="lazy">
+                </div>
+                <div class="certificates__slide keen-slider__slide">
+                    <img src="{{ asset('/img/certificates/cert_1.webp') }}" alt="Сертификат 1" loading="lazy">
+                </div>
+                <div class="certificates__slide keen-slider__slide">
+                    <img src="{{ asset('/img/certificates/cert_2.webp') }}" alt="Сертификат 2" loading="lazy">
+                </div>
                 <div class="certificates__slide keen-slider__slide">
                     <img src="{{ asset('/img/certificates/cert_1.webp') }}" alt="Сертификат 1" loading="lazy">
                 </div>

@@ -104,6 +104,15 @@ html {
         }
     }
 
+    &__messenger--call {
+        display: none;
+
+        .sprite_icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
     &__contacts {
         display: flex;
         flex-direction: column;
@@ -151,6 +160,18 @@ html {
     .site-header {
         &__menu {
             display: none;
+        }
+    }
+}
+
+@media (max-width: 812px) {
+    .site-header {
+        &__feedback {
+            display: none;
+        }
+
+        &__messenger--call {
+            display: inline-flex;
         }
     }
 }

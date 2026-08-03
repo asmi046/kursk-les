@@ -23,10 +23,10 @@ function initSliders() {
         let autoplay;
         const slider = new KeenSlider(certEl, {
             loop: true,
-            slides: { perView: 3, spacing: 16 },
+            slides: { perView: 5, spacing: 16 },
             breakpoints: {
-                '(max-width: 820px)': { slides: { perView: 2, spacing: 12 } },
-                '(max-width: 520px)': { slides: { perView: 1, spacing: 8 } },
+                '(max-width: 820px)': { slides: { perView: 3, spacing: 12 } },
+                '(max-width: 520px)': { slides: { perView: 2, spacing: 8 } },
             },
         });
 

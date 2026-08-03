@@ -1,4 +1,4 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 .site-footer {
     background-color: #2a2a28;
@@ -9,7 +9,7 @@
         grid-template-columns: 1.4fr 1fr 1fr 1fr;
         gap: 40px;
         padding-bottom: 40px;
-        border-bottom: 1px solid rgba(255, 255, 255, .12);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     &__col-title {
@@ -26,6 +26,7 @@
             display: block;
             width: 100%;
             height: auto;
+            max-width: 250px;
         }
     }
 
@@ -35,7 +36,7 @@
     }
 
     &__about-text {
-        color: rgba(255, 255, 255, .7);
+        color: rgba(255, 255, 255, 0.7);
         font-size: $fs-small;
         line-height: 1.6;
         max-width: 280px;
@@ -48,7 +49,7 @@
                 margin-bottom: 12px;
 
                 a {
-                    color: rgba(255, 255, 255, .8);
+                    color: rgba(255, 255, 255, 0.8);
                     text-decoration: none;
                     font-size: $fs-small;
                     transition: $btn-transition;
@@ -64,7 +65,7 @@
     &__contacts {
         a {
             display: block;
-            color: rgba(255, 255, 255, .8);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-size: $fs-small;
             margin-bottom: 12px;
@@ -111,7 +112,7 @@
         align-items: center;
         gap: 20px;
         padding-top: 24px;
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, 0.5);
         font-size: 13px;
     }
 }

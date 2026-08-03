@@ -1,4 +1,4 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 .reasons {
     &__inner {
@@ -40,7 +40,7 @@
     }
 
     &__media {
-        background-color: #F3EBE9;
+        background-color: #f3ebe9;
         padding: 20px;
         border-radius: $card-rad;
     }
@@ -68,10 +68,10 @@
     }
 }
 
-@media (max-width: $bp_mobile) {
-    .reasons {
-        &__grid {
-            grid-template-columns: 1fr;
-        }
-    }
-}
+// @media (max-width: $bp_mobile) {
+//     .reasons {
+//         &__grid {
+//             grid-template-columns: 1fr;
+//         }
+//     }
+// }
