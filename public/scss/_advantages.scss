@@ -1,4 +1,4 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 .advantages {
     &__list {
@@ -37,7 +37,7 @@
         margin-bottom: 0;
 
         &::after {
-            content: '';
+            content: "";
             display: block;
             width: 130px;
             height: 1px;

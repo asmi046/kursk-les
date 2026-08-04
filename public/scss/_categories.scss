@@ -1,4 +1,4 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 .categories {
     background-color: $categories_bg;
@@ -24,7 +24,7 @@
 
     &:hover {
         transform: translateY(-6px);
-        box-shadow: 0 16px 30px -16px rgba(0, 0, 0, .35);
+        box-shadow: 0 16px 30px -16px rgba(0, 0, 0, 0.35);
 
         .category-card__arrow {
             transform: translateX(4px);

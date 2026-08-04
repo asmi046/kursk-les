@@ -22,14 +22,23 @@
             </div>
 
             <div class="site-header__actions">
-                <a class="site-header__messenger" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="Написать в MAX">
-                    <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-max"></use></svg>
+                <a class="site-header__messenger" href="https://max.ru/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Написать в MAX">
+                    <svg class="sprite_icon" aria-hidden="true" focusable="false">
+                        <use xlink:href="#icon-max"></use>
+                    </svg>
                 </a>
-                <a class="site-header__messenger" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
-                    <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-tg"></use></svg>
+                <a class="site-header__messenger" href="https://t.me/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Написать в Telegram">
+                    <svg class="sprite_icon" aria-hidden="true" focusable="false">
+                        <use xlink:href="#icon-tg"></use>
+                    </svg>
                 </a>
-                <a class="site-header__messenger site-header__messenger--call" href="tel:+74712343090" aria-label="Позвонить">
-                    <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-call"></use></svg>
+                <a class="site-header__messenger site-header__messenger--call" href="tel:+74712343090"
+                    aria-label="Позвонить">
+                    <svg class="sprite_icon" aria-hidden="true" focusable="false">
+                        <use xlink:href="#icon-call"></use>
+                    </svg>
                 </a>
             </div>
 

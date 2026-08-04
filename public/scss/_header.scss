@@ -1,4 +1,4 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 // Закреплённая шапка: отступ для якорной прокрутки
 html {
@@ -49,7 +49,7 @@ html {
                         transition: $btn_transition;
 
                         &::after {
-                            content: '';
+                            content: "";
                             position: absolute;
                             left: 0;
                             bottom: -6px;
