@@ -34,50 +34,7 @@
     </section>
 
     {{-- ===================== ПРЕИМУЩЕСТВА ===================== --}}
-    <section id="advantages" class="advantages" aria-label="Преимущества">
-        <div class="container">
-            <div class="advantages__list">
-                <article class="advantages__item">
-                    <span class="advantages__icon" aria-hidden="true">
-                        <svg class="sprite_icon" focusable="false">
-                            <use xlink:href="#icon-adv-natural"></use>
-                        </svg>
-                    </span>
-                    <h2 class="advantages__title">Натуральные<br>материалы</h2>
-                    <p class="advantages__text">
-                        Для производства наших разделочных и сервировочных досок мы используем только экологически чистые
-                        материалы безопасные для человека.
-                    </p>
-                </article>
-
-                <article class="advantages__item">
-                    <span class="advantages__icon" aria-hidden="true">
-                        <svg class="sprite_icon" focusable="false">
-                            <use xlink:href="#icon-adv-exclusiv"></use>
-                        </svg>
-                    </span>
-                    <h2 class="advantages__title">Эксклюзивный<br>дизайн</h2>
-                    <p class="advantages__text">
-                        Каждое изделие в нашем интернет магазине это произведение столярного искусства за которым стоит
-                        кропотливая работа мастера.
-                    </p>
-                </article>
-
-                <article class="advantages__item">
-                    <span class="advantages__icon" aria-hidden="true">
-                        <svg class="sprite_icon" focusable="false">
-                            <use xlink:href="#icon-adv-dolgov"></use>
-                        </svg>
-                    </span>
-                    <h2 class="advantages__title">Долговечность<br>изделий</h2>
-                    <p class="advantages__text">
-                        Благодаря качеству исполнения, качеств сырья и материалов наши изделия будут радовать Вас долгие
-                        годы. Сделайте подарок себе и близким!
-                    </p>
-                </article>
-            </div>
-        </div>
-    </section>
+    <x-advantages-section />
 
     {{-- ===================== КАТЕГОРИИ ТОВАРА ===================== --}}
     <section id="categories" class="categories" aria-label="Категории товаров">

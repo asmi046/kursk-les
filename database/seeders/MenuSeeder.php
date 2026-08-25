@@ -13,11 +13,12 @@ class MenuSeeder extends Seeder
     public function run(): void
     {
         DB::table('menus')->insert([
-            ['menu_name' => 'Главное меню', 'title' => 'Категории', 'order' => 1, 'lnk' => '#'],
-            ['menu_name' => 'Главное меню', 'title' => 'Магазин', 'order' => 2, 'lnk' => '#'],
-            ['menu_name' => 'Главное меню', 'title' => 'Индивидуальный заказ', 'order' => 3, 'lnk' => '#'],
-            ['menu_name' => 'Главное меню', 'title' => 'Проекты', 'order' => 4, 'lnk' => '#'],
-            ['menu_name' => 'Главное меню', 'title' => 'О нас', 'order' => 5, 'lnk' => '#'],
+            ['menu_name' => 'Главное меню', 'title' => 'О нас', 'order' => 1, 'lnk' => '#'],
+            ['menu_name' => 'Главное меню', 'title' => 'Каталог', 'order' => 2, 'lnk' => '#'],
+            ['menu_name' => 'Главное меню', 'title' => 'Оплата и доставка', 'order' => 3, 'lnk' => '#'],
+            ['menu_name' => 'Главное меню', 'title' => 'Для ресторанов', 'order' => 4, 'lnk' => '#'],
+            ['menu_name' => 'Главное меню', 'title' => 'Контакты', 'order' => 5, 'lnk' => '#'],
+
             ['menu_name' => 'Каталог в подвале', 'title' => 'Наборы', 'order' => 1, 'lnk' => '#'],
             ['menu_name' => 'Каталог в подвале', 'title' => 'Разделочные доски', 'order' => 2, 'lnk' => '#'],
             ['menu_name' => 'Каталог в подвале', 'title' => 'Торцевые изделия', 'order' => 3, 'lnk' => '#'],
