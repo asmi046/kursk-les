@@ -7,13 +7,7 @@
 
             <div class="site-header__menu">
                 <nav aria-label="Главное меню">
-                    <ul>
-                        <li><a href="{{ route('home') }}#categories">Категории</a></li>
-                        <li><a href="{{ route('home') }}#shop">Магазин</a></li>
-                        <li><a href="{{ route('home') }}#individual">Индивидуальный заказ</a></li>
-                        <li><a href="{{ route('home') }}#projects">Проекты</a></li>
-                        <li><a href="{{ route('home') }}#about">О нас</a></li>
-                    </ul>
+                    <x-menues.puncts></x-menues.puncts>
                 </nav>
             </div>
 
@@ -22,19 +16,19 @@
             </div>
 
             <div class="site-header__actions">
-                <a class="site-header__messenger" href="https://max.ru/" target="_blank" rel="noopener noreferrer"
+                <a class="site-header__messenger" href="{{ contact('max_lnk') ?? '#' }}" target="_blank" rel="noopener noreferrer"
                     aria-label="Написать в MAX">
                     <svg class="sprite_icon" aria-hidden="true" focusable="false">
                         <use xlink:href="#icon-max"></use>
                     </svg>
                 </a>
-                <a class="site-header__messenger" href="https://t.me/" target="_blank" rel="noopener noreferrer"
+                <a class="site-header__messenger" href="{{ contact('tg_lnk') ?? '#' }}" target="_blank" rel="noopener noreferrer"
                     aria-label="Написать в Telegram">
                     <svg class="sprite_icon" aria-hidden="true" focusable="false">
                         <use xlink:href="#icon-tg"></use>
                     </svg>
                 </a>
-                <a class="site-header__messenger site-header__messenger--call" href="tel:+74712343090"
+                <a class="site-header__messenger site-header__messenger--call" href="tel:{{ phone_format(contact('phone') ?? '') }}"
                     aria-label="Позвонить">
                     <svg class="sprite_icon" aria-hidden="true" focusable="false">
                         <use xlink:href="#icon-call"></use>
@@ -43,8 +37,8 @@
             </div>
 
             <div class="site-header__contacts">
-                <a href="tel:+74712343090">+7 (4712) 34-30-90</a>
-                <a href="mailto:kursk-les@yandex.ru">kursk-les@yandex.ru</a>
+                <a href="tel:{{ phone_format(contact('phone') ?? '') }}">{{ contact('phone') }}</a>
+                <a href="mailto:{{ contact('email') ?? '' }}">{{ contact('email') }}</a>
             </div>
         </div>
     </div>
