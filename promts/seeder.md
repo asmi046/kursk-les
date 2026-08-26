@@ -227,3 +227,30 @@ public/tmp/reasons/pr_4.webp
 У блока .restaurant-offer\_\_block замени значения gap и padding на 10px.
 
 Для блока .restaurant-offer\_\_image сделай минимальную высоту 300px.
+
+---
+
+Создай отдельную модель для товара, к модели создай миграцию и сидер.
+
+Поля в миграции:
+
+- title (string)
+- description (text, nullable)
+- img (string)
+- slug (string, unique)
+- price (decimal, 8, 2)
+- old_price (decimal, 8, 2, nullable)
+- model (string, nullable)
+- type (string, nullable)
+- wigth (string, nullable)
+- height (string, nullable)
+- length (string, nullable)
+- weight (string, nullable)
+- material (string, nullable)
+- color (string, nullable)
+- handle_exist (boolean, default false)
+- rust_exist (boolean, default false)
+
+К полям обязательно добавь ->comment('...') с описанием что это за поле.
+
+Первичный сидер сформируй из данных из секции class="shop" из файла @resources/views/index.blade.php. Учти все корректировки и опыт по созданию сидеров из чата выше. Недостающую информацию сгенерируй сам. Фото товаров возьми из директории @public/tmp/shop, при этом загрузи их в стородж.

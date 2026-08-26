@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             AboutBlockSeeder::class,
             ProjectSeeder::class,
             RestaurantOfferSeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }

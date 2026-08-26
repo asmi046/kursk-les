@@ -48,20 +48,7 @@
     </section>
 
     {{-- ===================== ИНТЕРНЕТ-МАГАЗИН ===================== --}}
-    <section id="shop" class="shop" aria-label="Интернет-магазин">
-        <div class="container">
-            <h2 class="section-head">Интернет-магазин</h2>
-
-            <div class="shop__grid">
-                <x-cards.product-card :image="asset('/img/shop/magaz_1.webp')" title="Набор «Лесная сказка»" price="1 290 ₽" href="#" />
-                <x-cards.product-card :image="asset('/img/shop/magaz_2.webp')" title="Разделочная доска «Классика»" price="990 ₽"
-                    href="#" />
-                <x-cards.product-card :image="asset('/img/shop/magaz_3.webp')" title="Торцевая доска «Шахматная»" price="2 490 ₽"
-                    href="#" />
-                <x-cards.product-card :image="asset('/img/shop/magaz_4.webp')" title="Подставка под горячее" price="690 ₽" href="#" />
-            </div>
-        </div>
-    </section>
+    <x-shop-section />
 
     <x-individual-section />
 
