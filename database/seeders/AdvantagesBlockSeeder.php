@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 use DB;
 
-class ContentBlockSeeder extends Seeder
+class AdvantagesBlockSeeder extends Seeder
 {
     public function run(): void
     {
@@ -18,6 +18,7 @@ class ContentBlockSeeder extends Seeder
                 'title' => 'Натуральные<br>материалы',
                 'value' => 'Для производства наших разделочных и сервировочных досок мы используем только экологически чистые материалы безопасные для человека.',
                 'icon' => '#icon-adv-natural',
+                'img' => null,
                 'order' => 1,
             ],
             [
@@ -26,6 +27,7 @@ class ContentBlockSeeder extends Seeder
                 'title' => 'Эксклюзивный<br>дизайн',
                 'value' => 'Каждое изделие в нашем интернет магазине это произведение столярного искусства за которым стоит кропотливая работа мастера.',
                 'icon' => '#icon-adv-exclusiv',
+                'img' => null,
                 'order' => 2,
             ],
             [
@@ -34,6 +36,7 @@ class ContentBlockSeeder extends Seeder
                 'title' => 'Долговечность<br>изделий',
                 'value' => 'Благодаря качеству исполнения, качеств сырья и материалов наши изделия будут радовать Вас долгие годы. Сделайте подарок себе и близким!',
                 'icon' => '#icon-adv-dolgov',
+                'img' => null,
                 'order' => 3,
             ],
         ]);

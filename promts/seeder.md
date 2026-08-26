@@ -23,3 +23,64 @@
 - Преимущества
 
 параметр 'lnk' в каждом пункте = "#"
+
+---
+
+Измени сидер @database/seeders/ContentBlockSeeder.php следующим образом:
+
+Для блока 'group' => 'individual', 'key' => 'text', сделай загрузку 'value' из html файла с текстом положи в директорию @public/tmp. в файле только теги размтки текста (параграфы выделения жирным и т. д.)
+
+Для блоков с идентификаторам
+
+'group' => 'individual', 'key' => 'max_lnk',
+'group' => 'individual', 'key' => 'tg_lnk',
+
+Сделай загрузку в storage изображений:
+
+public/tmp/messenger_logo/max_color.svg
+public/tmp/messenger_logo/tg_color.svg
+
+и ссылку на них помести в поле 'img'
+
+После откорректируй вывод этих иконок к созданном ранее компоненте.
+
+Так же сделай так чтобы изображения в слайдере id="individual-slider" были добавленны в сидер и выводились в шаблоне из него.
+
+Изображение возьми из файла @public/tmp/individual/individual_1.webp, его так же загрузи в сторадж при выполнении сидера.
+
+---
+
+Давай разделим сидер @database/seeders/ContentBlockSeeder.php на 2 части по секциям.
+Обе части назови в соответствии с блокам контента и и подключи в @database/seeders/DatabaseSeeder.php
+
+---
+
+Давай на основе информации в секции id="reasons" из файла а @resources/views/index.blade.php слздадим отдельный сидер и подключим его в @database/seeders/DatabaseSeeder.php
+
+Так-же создадим блейд компонет для этой секции и выведем в нем данные из базы.
+
+Давай исправим созданный сидер @database/seeders/ReasonsBlockSeeder.php следующим образом:
+
+загружай файлы
+
+public/tmp/reasons/pr_1.webp
+public/tmp/reasons/pr_2.webp
+public/tmp/reasons/pr_3.webp
+public/tmp/reasons/pr_4.webp
+
+В хранилище и уже ссылку из хранилища вставляй в поля 'img'
+
+---
+
+Отлично теперь давай сделаем так чтобы загрузка в сидере осуществлялась по средствам фасада Storage. В хранилище должна быть отдельная папка 'reasons' и все файлы из временного каталога перемещай туда.
+
+---
+
+Давай сделаем отдельную модель для хранения сертификатов из секции id="certificates" которая расположенна в файле @resources/views/index.blade.php. СОздай для модели миграцию и сидер.
+
+В сидере изображения сертификатов загружай в стородж. Файлы возьми эти:
+
+@public/img/certificates/cert_1.webp
+@public/img/certificates/cert_2.webp
+
+После этого создай блейд компонет для вывода этой секции.

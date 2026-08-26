@@ -18,7 +18,10 @@ class DatabaseSeeder extends Seeder
             SeoDataSeeder::class,
             MenuSeeder::class,
             ContactSeeder::class,
-            ContentBlockSeeder::class,
+            AdvantagesBlockSeeder::class,
+            IndividualBlockSeeder::class,
+            ReasonsBlockSeeder::class,
+            CertificateSeeder::class,
         ]);
     }
 }
