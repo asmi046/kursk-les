@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             IndividualBlockSeeder::class,
             ReasonsBlockSeeder::class,
             CertificateSeeder::class,
+            AboutBlockSeeder::class,
+            ProjectSeeder::class,
         ]);
     }
 }

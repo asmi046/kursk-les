@@ -66,54 +66,12 @@
     <x-individual-section />
 
     {{-- ===================== НАШИ ПРОЕКТЫ ===================== --}}
-    <section id="projects" class="projects" aria-label="Наши проекты">
-        <div class="container">
-            <h2 class="section-head">Наши проекты</h2>
-
-            <div class="projects__grid">
-                <x-cards.project-card :image="asset('/img/projects/proj_1.webp')" title="Кабинет руководителя" href="#" />
-                <x-cards.project-card :image="asset('/img/projects/proj_2.webp')" title="Окна для проекта мужская гимназия г. Курск"
-                    href="#" />
-                <x-cards.project-card :image="asset('/img/projects/proj_3.webp')" title="Деревянное зодчество" href="#" />
-            </div>
-        </div>
-    </section>
+    <x-projects-section />
 
     <x-reasons-section />
 
     {{-- ===================== О НАС ===================== --}}
-    <section id="about" class="about" aria-label="О нас">
-        <div class="container">
-            <div class="about__inner">
-                <div class="about__content">
-                    <h2 class="section-head">О нас</h2>
-                    <div class="text_styles">
-                        <p>
-                            Компания ООО «Курский лес» является одним из крупнейших лесоперерабатывающих
-                            предприятий по работе с твердыми породами дерева дуб, бук, ясень, на
-                            территории г. Курска и Курской области, работающая более 10 лет.
-                            Производственная линия, общей площадью 4200 м², включает в себя цех
-                            первичной деревообработки, цех изготовления готовых изделий крупного
-                            формата, цех по изготовлению мебели по индивидуальным проектам, цех
-                            изготовления изделий из дуба и бука для розницы (торговля на площадках ОЗОН,
-                            ВБ, Яндекс маркет), три покрасочные камеры, логистический терминал.
-                        </p>
-                        <p>
-                            ООО «Курский лес» выполняет заказ по государственному контракту -
-                            реконструкция Экспозиционного корпуса Курского областного краеведческого
-                            мкузея «Здание мужской классической гимназии, 1836 - 1842 гг.»
-                        </p>
-                        <p>Наша компания активно участвует в помощи бойцам на СВО.</p>
-                    </div>
-                </div>
-                <div class="about__media">
-                    <video class="about__video" controls poster="{{ asset('/video/main_present.webp') }}">
-                        <source src="{{ asset('/video/davinir_present.mp4') }}" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-about-section />
 
     {{-- ===================== НАГРАДЫ И СЕРТИФИКАТЫ ===================== --}}
     <x-certificates-section />

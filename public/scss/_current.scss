@@ -1,4 +1,4 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 body {
     font-family: $main_fonts;
@@ -16,12 +16,31 @@ h5 {
     margin: 0;
 }
 
+a {
+    color: $brand_green;
+    text-decoration: none;
+
+    &:hover {
+        color: $brand_green_hover;
+    }
+}
+
 header,
 footer,
 section {
     width: 100%;
     padding-top: $section_space;
     padding-bottom: $section_space;
+}
+
+.section {
+    &__first {
+        padding-top: 140px;
+    }
+}
+
+.breadcrumbs {
+    font-size: $fs-small;
 }
 
 .container {
@@ -85,6 +104,15 @@ img {
     line-height: 1.15;
     color: $accent_green;
     margin: 0 0 40px;
+
+    &--top_space {
+        margin-top: 20px;
+    }
+
+    &--line {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e0e0e0;
+    }
 }
 
 .section-title {
@@ -143,7 +171,7 @@ img {
 .badge {
     display: inline-block;
     padding: 6px 14px;
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, 0.85);
     color: $brand_green;
     border-radius: 50px;
     font-size: $fs-small;
