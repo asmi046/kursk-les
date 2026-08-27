@@ -18,6 +18,11 @@ class RealProductSeeder extends Seeder
                 'title' => 'Набор разделочных досок «3 в 1» с подставкой',
                 'description' => file_get_contents(public_path('tmp/shop/1706481110.html')),
                 'img' => '1706481110.webp',
+                'galery' => [
+                    ['img' => '1706481110.webp', 'title' => 'Набор разделочных досок — фото 1'],
+                    ['img' => '1056863165.webp', 'title' => 'Набор разделочных досок — фото 2'],
+                    ['img' => '1085872553.webp', 'title' => 'Набор разделочных досок — фото 3'],
+                ],
                 'slug' => 'nabor-razdelochnyh-dosok-3-v-1',
                 'price' => 2857.00,
                 'old_price' => 7990.00,

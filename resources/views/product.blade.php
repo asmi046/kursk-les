@@ -19,8 +19,18 @@
 
             <div class="product__inner">
 
-                <div class="product__media">
-                    <img src="{{ Storage::url($product->img) }}" alt="{{ $product->title }}" loading="lazy">
+                <div class="product__slider-wrap">
+                    <div class="product__slider keen-slider" id="product-slider" aria-label="{{ $product->title }}">
+                        <div class="product__slide keen-slider__slide">
+                            <img src="{{ Storage::url($product->img) }}" alt="{{ $product->title }}" loading="lazy">
+                        </div>
+                        @foreach ($product->galery ?? [] as $item)
+                            <div class="product__slide keen-slider__slide">
+                                <img src="{{ Storage::url($item['img']) }}" alt="{{ $item['title'] ?? $product->title }}"
+                                    loading="lazy">
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
 
                 <div class="product__info">
@@ -40,10 +50,8 @@
                     </ul>
 
                     <div class="product__description">
-                        {!! \Illuminate\Support\Str::limit($product->description, 250) !!}
-                        <br />
-                        <br />
-                        <a class="product__readmore" href="#description">Читать полностью</a>
+                        <div class="product__description-inner">{!! $product->description !!}</div>
+                        <button class="product__readmore" type="button" data-readmore-toggle>Читать полностью</button>
                     </div>
 
                     <ul class="product__specs">

@@ -10,6 +10,7 @@ class Product extends Model
         'title',
         'description',
         'img',
+        'galery',
         'slug',
         'price',
         'old_price',
@@ -30,5 +31,6 @@ class Product extends Model
         'old_price' => 'decimal:2',
         'handle_exist' => 'boolean',
         'rust_exist' => 'boolean',
+        'galery' => 'array',
     ];
 }

@@ -1,7 +1,6 @@
 @use "../vars" as *;
 
 // ===== Базовая кнопка =====
-button,
 .button {
     box-sizing: border-box;
     display: inline-flex;
@@ -18,7 +17,7 @@ button,
     font-size: $fs_base;
     font-weight: 400;
     text-decoration: none;
-    border-radius: $border_rad;
+    border-radius: $card_rad;
     transition: $btn_transition;
 
     .sprite_icon {
@@ -57,13 +56,11 @@ a.button:hover {
 
 // Светлая (кремовая)
 .button--light {
-    background-color: $cream;
-    border-color: $cream;
+    background-color: white;
+    border-color: white;
     color: $brand_green;
 
     &:hover {
-        background-color: #dedacf;
-        border-color: #dedacf;
         color: $brand_green;
     }
 }

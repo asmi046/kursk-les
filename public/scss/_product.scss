@@ -3,16 +3,24 @@
 .product {
     &__inner {
         display: grid;
-        grid-template-columns: 1fr 1.1fr 320px;
-        gap: 40px;
+        grid-template-columns: 1fr 1.3fr 1fr;
+        gap: 30px;
         align-items: start;
     }
 
-    &__media {
+    &__slider-wrap {
         border-radius: $card_rad;
         overflow: hidden;
-        aspect-ratio: 4 / 5;
         background-color: $gray_bg_color;
+    }
+
+    &__slider {
+        min-width: 0;
+    }
+
+    &__slide {
+        aspect-ratio: 4 / 5;
+        min-width: 0;
 
         img {
             width: 100%;
@@ -63,9 +71,42 @@
         margin: 0;
     }
 
+    &__description-inner {
+        position: relative;
+        max-height: 7.2em;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3em;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+            pointer-events: none;
+        }
+    }
+
+    &__description.is-expanded &__description-inner {
+        max-height: 2000px;
+
+        &::after {
+            display: none;
+        }
+    }
+
     &__readmore {
         color: $black_color;
         font-weight: 400;
+        background: none;
+        border: 0;
+        padding: 0;
+        margin-top: 12px;
+        font-family: $main_fonts;
+        font-size: $fs_base;
+        cursor: pointer;
     }
 
     &__specs {
@@ -121,9 +162,9 @@
     }
 
     &__qty-btn {
-        width: 32px;
+        width: 23px;
         height: 100%;
-        background: none;
+        background-color: $light_bg_color;
         border: 0;
         font-size: 18px;
         line-height: 1;
@@ -260,12 +301,6 @@
         &__inner {
             grid-template-columns: 1fr;
             gap: 24px;
-        }
-
-        &__title {
-            font-size: 26px;
-            margin: 16px 0 20px;
-            padding-bottom: 20px;
         }
 
         &__quick-item {

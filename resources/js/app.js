@@ -41,10 +41,67 @@ function initSliders() {
         certEl.addEventListener('focusin', stopAutoplay);
         certEl.addEventListener('focusout', startAutoplay);
     }
+
+    // Слайдер «Товар» — фото товара
+    const productEl = document.querySelector('#product-slider');
+    if (productEl) {
+        new KeenSlider(productEl, {
+            loop: true,
+            slides: { perView: 1, spacing: 0 },
+        });
+    }
+}
+
+function initReadmore() {
+    document.querySelectorAll('[data-readmore-toggle]').forEach((btn) => {
+        const description = btn.closest('.product__description');
+        if (!description) {
+            return;
+        }
+        const inner = description.querySelector('.product__description-inner');
+        if (!inner) {
+            return;
+        }
+
+        if (inner.scrollHeight <= inner.clientHeight + 1) {
+            btn.style.display = 'none';
+            return;
+        }
+
+        btn.addEventListener('click', () => {
+            const isOpen = description.classList.toggle('is-expanded');
+            btn.textContent = isOpen ? 'Свернуть' : 'Читать полностью';
+        });
+    });
+}
+
+function initQty() {
+    document.querySelectorAll('[data-qty]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const wrap = btn.closest('.product__qty');
+            const input = wrap?.querySelector('input[type="number"]');
+            if (!input) {
+                return;
+            }
+            const min = parseInt(input.min, 10) || 1;
+            const step = btn.dataset.qty === '+' ? 1 : -1;
+            const next = Math.max(min, (parseInt(input.value, 10) || min) + step);
+            input.value = next;
+        });
+    });
+}
+
+function initProductPage() {
+    initReadmore();
+    initQty();
 }
 
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSliders);
+    document.addEventListener('DOMContentLoaded', () => {
+        initSliders();
+        initProductPage();
+    });
 } else {
     initSliders();
+    initProductPage();
 }
