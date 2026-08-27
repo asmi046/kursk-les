@@ -16,7 +16,7 @@ class RealProductSeeder extends Seeder
         $products = [
             [
                 'title' => 'Набор разделочных досок «3 в 1» с подставкой',
-                'description' => '1706481110',
+                'description' => file_get_contents(public_path('tmp/shop/1706481110.html')),
                 'img' => '1706481110.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-3-v-1',
                 'price' => 2857.00,
@@ -34,7 +34,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой',
-                'description' => '1056863165',
+                'description' => file_get_contents(public_path('tmp/shop/1056863165.html')),
                 'img' => '1056863165.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1',
                 'price' => 2800.00,
@@ -52,7 +52,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой',
-                'description' => '1085894091',
+                'description' => file_get_contents(public_path('tmp/shop/1085894091.html')),
                 'img' => '1085894091.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1-1085894091',
                 'price' => 3808.00,
@@ -70,7 +70,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «3 в 1» с подставкой',
-                'description' => '1615564213',
+                'description' => file_get_contents(public_path('tmp/shop/1615564213.html')),
                 'img' => '1615564213.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-3-v-1-1615564213',
                 'price' => 3250.00,
@@ -88,7 +88,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «2 в 1» с подставкой',
-                'description' => '1706481815',
+                'description' => file_get_contents(public_path('tmp/shop/1706481815.html')),
                 'img' => '1706481815.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-2-v-1-1706481815',
                 'price' => 2416.00,
@@ -106,7 +106,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой (бук)',
-                'description' => '1829399156',
+                'description' => file_get_contents(public_path('tmp/shop/1829399156.html')),
                 'img' => '1829399156.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1-buk-1829399156',
                 'price' => 2835.00,
@@ -124,7 +124,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой (бук)',
-                'description' => '1829393210',
+                'description' => file_get_contents(public_path('tmp/shop/1829393210.html')),
                 'img' => '1829393210.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1-buk-1829393210',
                 'price' => 2835.00,
@@ -142,7 +142,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой',
-                'description' => '1085872553',
+                'description' => file_get_contents(public_path('tmp/shop/1085872553.html')),
                 'img' => '1085872553.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1-1085872553',
                 'price' => 5701.00,
@@ -160,7 +160,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «3 в 1» с подставкой (бук)',
-                'description' => '2202840020',
+                'description' => file_get_contents(public_path('tmp/shop/2202840020.html')),
                 'img' => '2202840020.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-3-v-1-buk-2202840020',
                 'price' => 2668.00,
@@ -178,7 +178,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «2 в 1» с подставкой (40×30)',
-                'description' => '4469469330',
+                'description' => file_get_contents(public_path('tmp/shop/4469469330.html')),
                 'img' => '4469469330.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-2-v-1-4469469330',
                 'price' => 2391.00,
@@ -196,7 +196,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «2 в 1» с подставкой (40×30)',
-                'description' => '1706481905',
+                'description' => file_get_contents(public_path('tmp/shop/1706481905.html')),
                 'img' => '1706481905.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-2-v-1-1706481905',
                 'price' => 2386.00,
@@ -214,7 +214,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «2 в 1» с подставкой (40×30, бук)',
-                'description' => '4469469731',
+                'description' => file_get_contents(public_path('tmp/shop/4469469731.html')),
                 'img' => '4469469731.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-2-v-1-4469469731',
                 'price' => 2093.00,
@@ -232,7 +232,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «2 в 1» с подставкой (40×30)',
-                'description' => '1706482056',
+                'description' => file_get_contents(public_path('tmp/shop/1706482056.html')),
                 'img' => '1706482056.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-2-v-1-1706482056',
                 'price' => 2468.00,
@@ -250,7 +250,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «2 в 1» с подставкой (овальный, 40×30)',
-                'description' => '4469469233',
+                'description' => file_get_contents(public_path('tmp/shop/4469469233.html')),
                 'img' => '4469469233.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-2-v-1-oval-4469469233',
                 'price' => 2141.00,
@@ -268,7 +268,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Сувенирная разделочная доска с подставкой (овальная, 40×30)',
-                'description' => '4073213443',
+                'description' => file_get_contents(public_path('tmp/shop/4073213443.html')),
                 'img' => '4073213443.webp',
                 'slug' => 'suvenirnaya-razdelochnaya-doska-oval-4073213443',
                 'price' => 2524.00,
@@ -286,7 +286,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Сувенирная разделочная доска с подставкой (фигурная, 40×30)',
-                'description' => '4469470004',
+                'description' => file_get_contents(public_path('tmp/shop/4469470004.html')),
                 'img' => '4469470004.webp',
                 'slug' => 'suvenirnaya-razdelochnaya-doska-figurnaya-4469470004',
                 'price' => 2184.00,
@@ -304,7 +304,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Сувенирная разделочная доска с подставкой (овальная, 40×30, шоколад)',
-                'description' => '4469469258',
+                'description' => file_get_contents(public_path('tmp/shop/4469469258.html')),
                 'img' => '4469469258.webp',
                 'slug' => 'suvenirnaya-razdelochnaya-doska-oval-shokolad-4469469258',
                 'price' => 2416.00,
@@ -322,7 +322,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «3 в 1» с подставкой (бук, светлый)',
-                'description' => '2202840051',
+                'description' => file_get_contents(public_path('tmp/shop/2202840051.html')),
                 'img' => '2202840051.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-3-v-1-buk-svetlyy-2202840051',
                 'price' => 2588.00,
@@ -340,7 +340,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Сувенирная разделочная доска с подставкой (фигурная, 30×40)',
-                'description' => '4469469249',
+                'description' => file_get_contents(public_path('tmp/shop/4469469249.html')),
                 'img' => '4469469249.webp',
                 'slug' => 'suvenirnaya-razdelochnaya-doska-figurnaya-4469469249',
                 'price' => 3137.00,
@@ -358,7 +358,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Сувенирная разделочная доска с подставкой (фигурная, 40×30, шоколад)',
-                'description' => '4469469689',
+                'description' => file_get_contents(public_path('tmp/shop/4469469689.html')),
                 'img' => '4469469689.webp',
                 'slug' => 'suvenirnaya-razdelochnaya-doska-figurnaya-shokolad-4469469689',
                 'price' => 2814.00,
@@ -376,7 +376,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «3 в 1» с подставкой (бук, уценка)',
-                'description' => '5204534670',
+                'description' => file_get_contents(public_path('tmp/shop/5204534670.html')),
                 'img' => '5204534670.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-3-v-1-buk-utsenka-5204534670',
                 'price' => 3378.00,
@@ -394,7 +394,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Сувенирная разделочная доска с подставкой (овальная, 40×30, шоколад)',
-                'description' => '4469469519',
+                'description' => file_get_contents(public_path('tmp/shop/4469469519.html')),
                 'img' => '4469469519.webp',
                 'slug' => 'suvenirnaya-razdelochnaya-doska-oval-shokolad-4469469519',
                 'price' => 2915.00,
@@ -412,7 +412,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Сувенирная разделочная доска с подставкой (прямоугольная, 30×40, бук)',
-                'description' => '5139412363',
+                'description' => file_get_contents(public_path('tmp/shop/5139412363.html')),
                 'img' => '5139412363.webp',
                 'slug' => 'suvenirnaya-razdelochnaya-doska-pryamougolnaya-5139412363',
                 'price' => 2906.00,
@@ -430,7 +430,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой (бук)',
-                'description' => '5139413198',
+                'description' => file_get_contents(public_path('tmp/shop/5139413198.html')),
                 'img' => '5139413198.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1-buk-5139413198',
                 'price' => 3509.00,
@@ -448,7 +448,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Сувенирная разделочная доска с подставкой (овальная, 40×30, дуб)',
-                'description' => '5438174285',
+                'description' => file_get_contents(public_path('tmp/shop/5438174285.html')),
                 'img' => '5438174285.webp',
                 'slug' => 'suvenirnaya-razdelochnaya-doska-oval-5438174285',
                 'price' => 2360.00,
@@ -466,7 +466,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой (бук, прозрачный)',
-                'description' => '5139418394',
+                'description' => file_get_contents(public_path('tmp/shop/5139418394.html')),
                 'img' => '5139418394.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1-buk-prozrachnyy-5139418394',
                 'price' => 3509.00,
@@ -484,7 +484,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой (дерево)',
-                'description' => '5289247728',
+                'description' => file_get_contents(public_path('tmp/shop/5289247728.html')),
                 'img' => '5289247728.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1-5289247728',
                 'price' => 6834.00,
@@ -502,7 +502,7 @@ class RealProductSeeder extends Seeder
             ],
             [
                 'title' => 'Набор разделочных досок «4 в 1» с подставкой (бук)',
-                'description' => '5289242974',
+                'description' => file_get_contents(public_path('tmp/shop/5289242974.html')),
                 'img' => '5289242974.webp',
                 'slug' => 'nabor-razdelochnyh-dosok-4-v-1-buk-5289242974',
                 'price' => 6130.00,
@@ -517,7 +517,7 @@ class RealProductSeeder extends Seeder
                 'color' => 'Коричневый',
                 'handle_exist' => false,
                 'rust_exist' => true,
-            ]
+            ],
         ];
 
         foreach ($products as $data) {
@@ -528,35 +528,35 @@ class RealProductSeeder extends Seeder
     private function copyAssetsToStorage(): void
     {
         $files = [
-                    'shop/1706481110.webp' => public_path('tmp/shop/1706481110.webp'),
-                    'shop/1056863165.webp' => public_path('tmp/shop/1056863165.webp'),
-                    'shop/1085894091.webp' => public_path('tmp/shop/1085894091.webp'),
-                    'shop/1615564213.webp' => public_path('tmp/shop/1615564213.webp'),
-                    'shop/1706481815.webp' => public_path('tmp/shop/1706481815.webp'),
-                    'shop/1829399156.webp' => public_path('tmp/shop/1829399156.webp'),
-                    'shop/1829393210.webp' => public_path('tmp/shop/1829393210.webp'),
-                    'shop/1085872553.webp' => public_path('tmp/shop/1085872553.webp'),
-                    'shop/2202840020.webp' => public_path('tmp/shop/2202840020.webp'),
-                    'shop/4469469330.webp' => public_path('tmp/shop/4469469330.webp'),
-                    'shop/1706481905.webp' => public_path('tmp/shop/1706481905.webp'),
-                    'shop/4469469731.webp' => public_path('tmp/shop/4469469731.webp'),
-                    'shop/1706482056.webp' => public_path('tmp/shop/1706482056.webp'),
-                    'shop/4469469233.webp' => public_path('tmp/shop/4469469233.webp'),
-                    'shop/4073213443.webp' => public_path('tmp/shop/4073213443.webp'),
-                    'shop/4469470004.webp' => public_path('tmp/shop/4469470004.webp'),
-                    'shop/4469469258.webp' => public_path('tmp/shop/4469469258.webp'),
-                    'shop/2202840051.webp' => public_path('tmp/shop/2202840051.webp'),
-                    'shop/4469469249.webp' => public_path('tmp/shop/4469469249.webp'),
-                    'shop/4469469689.webp' => public_path('tmp/shop/4469469689.webp'),
-                    'shop/5204534670.webp' => public_path('tmp/shop/5204534670.webp'),
-                    'shop/4469469519.webp' => public_path('tmp/shop/4469469519.webp'),
-                    'shop/5139412363.webp' => public_path('tmp/shop/5139412363.webp'),
-                    'shop/5139413198.webp' => public_path('tmp/shop/5139413198.webp'),
-                    'shop/5438174285.webp' => public_path('tmp/shop/5438174285.webp'),
-                    'shop/5139418394.webp' => public_path('tmp/shop/5139418394.webp'),
-                    'shop/5289247728.webp' => public_path('tmp/shop/5289247728.webp'),
-                    'shop/5289242974.webp' => public_path('tmp/shop/5289242974.webp'),
-            ];
+            '1706481110.webp' => public_path('tmp/shop/1706481110.webp'),
+            '1056863165.webp' => public_path('tmp/shop/1056863165.webp'),
+            '1085894091.webp' => public_path('tmp/shop/1085894091.webp'),
+            '1615564213.webp' => public_path('tmp/shop/1615564213.webp'),
+            '1706481815.webp' => public_path('tmp/shop/1706481815.webp'),
+            '1829399156.webp' => public_path('tmp/shop/1829399156.webp'),
+            '1829393210.webp' => public_path('tmp/shop/1829393210.webp'),
+            '1085872553.webp' => public_path('tmp/shop/1085872553.webp'),
+            '2202840020.webp' => public_path('tmp/shop/2202840020.webp'),
+            '4469469330.webp' => public_path('tmp/shop/4469469330.webp'),
+            '1706481905.webp' => public_path('tmp/shop/1706481905.webp'),
+            '4469469731.webp' => public_path('tmp/shop/4469469731.webp'),
+            '1706482056.webp' => public_path('tmp/shop/1706482056.webp'),
+            '4469469233.webp' => public_path('tmp/shop/4469469233.webp'),
+            '4073213443.webp' => public_path('tmp/shop/4073213443.webp'),
+            '4469470004.webp' => public_path('tmp/shop/4469470004.webp'),
+            '4469469258.webp' => public_path('tmp/shop/4469469258.webp'),
+            '2202840051.webp' => public_path('tmp/shop/2202840051.webp'),
+            '4469469249.webp' => public_path('tmp/shop/4469469249.webp'),
+            '4469469689.webp' => public_path('tmp/shop/4469469689.webp'),
+            '5204534670.webp' => public_path('tmp/shop/5204534670.webp'),
+            '4469469519.webp' => public_path('tmp/shop/4469469519.webp'),
+            '5139412363.webp' => public_path('tmp/shop/5139412363.webp'),
+            '5139413198.webp' => public_path('tmp/shop/5139413198.webp'),
+            '5438174285.webp' => public_path('tmp/shop/5438174285.webp'),
+            '5139418394.webp' => public_path('tmp/shop/5139418394.webp'),
+            '5289247728.webp' => public_path('tmp/shop/5289247728.webp'),
+            '5289242974.webp' => public_path('tmp/shop/5289242974.webp'),
+        ];
 
         foreach ($files as $path => $source) {
             if (file_exists($source)) {

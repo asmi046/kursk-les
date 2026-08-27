@@ -14,7 +14,7 @@ class MenuSeeder extends Seeder
     {
         DB::table('menus')->insert([
             ['menu_name' => 'Главное меню', 'title' => 'О нас', 'order' => 1, 'lnk' => '#'],
-            ['menu_name' => 'Главное меню', 'title' => 'Каталог', 'order' => 2, 'lnk' => '#'],
+            ['menu_name' => 'Главное меню', 'title' => 'Каталог', 'order' => 2, 'lnk' => '/catalog'],
             ['menu_name' => 'Главное меню', 'title' => 'Оплата и доставка', 'order' => 3, 'lnk' => '#'],
             ['menu_name' => 'Главное меню', 'title' => 'Для ресторанов', 'order' => 4, 'lnk' => '/restaurant-offer'],
             ['menu_name' => 'Главное меню', 'title' => 'Контакты', 'order' => 5, 'lnk' => '/contacts'],

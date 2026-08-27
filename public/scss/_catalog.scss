@@ -1,0 +1,242 @@
+@use 'vars' as *;
+
+.catalog {
+    &__title {
+        font-family: $head_fonts;
+        font-size: $fs_h1;
+        color: $brand_green;
+        margin: 20px 0 30px;
+        line-height: 1.15;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    &__sidebar {
+        position: sticky;
+        top: 20px;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        min-width: 0;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__title {
+        font-family: $head_fonts;
+        font-size: $fs_h3;
+        font-weight: 700;
+        color: $black_color;
+        margin: 0;
+    }
+
+    &__group {
+        border: 1px solid $gray_border_color;
+        border-radius: $box_border_rad;
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    &__group-title {
+        padding: 14px 18px;
+        font-weight: 600;
+        color: $black_color;
+        font-family: $main_fonts;
+        font-size: $fs_base;
+    }
+
+    &__group-body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 18px;
+    }
+
+    &__option {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: $fs_small;
+        color: $black_color;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__checkbox {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+    }
+
+    &__checkbox-mark {
+        width: 16px;
+        height: 16px;
+        border: 1px solid $gray_border_color;
+        border-radius: 3px;
+        background-color: #fff;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    &__checkbox:checked + &__checkbox-mark {
+        background-color: $brand_green;
+        border-color: $brand_green;
+    }
+
+    &__checkbox:checked + &__checkbox-mark::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 3px;
+        width: 4px;
+        height: 8px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    &__sort {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    &__label {
+        font-size: $fs_small;
+        color: #555;
+    }
+
+    &__select-wrap {
+        position: relative;
+    }
+
+    &__select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 10px 36px 10px 14px;
+        border: 1px solid $gray_border_color;
+        border-radius: $box_border_rad;
+        background-color: #fff;
+        font-family: $main_fonts;
+        font-size: $fs_small;
+        color: $black_color;
+        min-width: 180px;
+        height: 3.0em;
+        cursor: pointer;
+
+        &:focus-visible {
+            outline: 2px solid $brand_green;
+            outline-offset: 2px;
+        }
+    }
+
+    &__select-icon {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        stroke: currentColor;
+        fill: none;
+        pointer-events: none;
+        color: $black_color;
+    }
+
+    &__compare {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: auto;
+    }
+}
+
+@media (max-width: $bp_tablet) {
+    .catalog {
+        &__inner {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        &__sidebar {
+            position: static;
+        }
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__title {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+    }
+}
+
+@media (max-width: $bp_mobile) {
+    .catalog {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+
+        &__title {
+            font-size: 28px;
+        }
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+
+        &__compare {
+            justify-content: center;
+        }
+
+        &__select {
+            min-width: 0;
+            width: 100%;
+        }
+    }
+}
