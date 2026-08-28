@@ -1,50 +1,48 @@
-@use 'vars' as *;
+@use "vars" as *;
 
 .text_styles {
-
-    p{
+    p {
         margin: 20px 0;
     }
 
     ul li {
-        margin: 10px 0;
+        margin: 5px 0;
         position: relative;
         padding-left: 20px;
     }
 
-    ol{
+    ol {
         counter-reset: my-numbers;
         padding-left: 20px;
         list-style: none;
 
         li {
-            margin: 10px 0;
+            margin: 5px 0;
             position: relative;
         }
 
-        li::before{
-            color: $main_color;
+        li::before {
+            color: $brand_green;
             font-weight: bold;
-            position: absolute!important;
-            left:-20px;
-            top:0;
+            position: absolute !important;
+            left: -20px;
+            top: 0;
             content: counter(my-numbers);
             counter-increment: my-numbers;
         }
     }
 
-    ul li:before{
-        content:"";
+    ul li:before {
+        content: "";
         position: absolute;
         width: 6px;
         height: 6px;
         left: 0;
-        top:7px;
+        top: 9px;
         border-radius: 2px;
-        background-color: $main_color;
+        background-color: $brand_green;
     }
 }
-
 
 @media (max-width: 320px) {
     .text_styles {

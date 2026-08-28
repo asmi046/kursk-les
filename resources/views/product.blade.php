@@ -36,21 +36,21 @@
                 <div class="product__info">
                     <ul class="product__quick">
                         <li class="product__quick-item">
-                            <span class="product__quick-label">Модель</span>
+                            <span class="product__quick-label product__quick-label--model">Модель</span>
                             <span class="product__quick-value">{{ $product->model }}</span>
                         </li>
                         <li class="product__quick-item">
-                            <span class="product__quick-label">Наличие</span>
+                            <span class="product__quick-label product__quick-label--exist">Наличие</span>
                             <span class="product__quick-value">На складе</span>
                         </li>
                         <li class="product__quick-item">
-                            <span class="product__quick-label">Вес</span>
+                            <span class="product__quick-label product__quick-label--weight">Вес</span>
                             <span class="product__quick-value">{{ $product->weight }}</span>
                         </li>
                     </ul>
 
                     <div class="product__description">
-                        <div class="product__description-inner">{!! $product->description !!}</div>
+                        <div class="product__description-inner text_styles">{!! $product->description !!}</div>
                         <button class="product__readmore" type="button" data-readmore-toggle>Читать полностью</button>
                     </div>
 
