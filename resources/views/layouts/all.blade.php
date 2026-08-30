@@ -43,6 +43,14 @@
         @yield('main')
 
         <x-site-footer />
+
+        <x-menues.side-menu>
+            <a class="side-menu__logo side-menu__logo--space" href="{{ route('home') }}"
+                aria-label="Курский Лес — на главную">
+                <img src="{{ asset('/img/logo/logo_black.svg') }}" alt="Курский Лес" width="160" height="40">
+            </a>
+            <x-menues.puncts></x-menues.puncts>
+        </x-menues.side-menu>
     </main>
 </body>
 

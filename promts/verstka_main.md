@@ -488,3 +488,14 @@ kursk-les@yandex.ru
     }
 }
 ```
+
+---
+
+Проведи аудит компонента для бокового меню, посмотри файлы:
+@resources/js/menues.js
+@resources/views/components/burger-icon.blade.php
+@resources/views/components/menues/side-menu.blade.php
+@public/scss/\_burger-icon.scss
+@public/scss/\_menues.scss
+
+Оцени принципы работы и дай рекомендации по улучшению кода.

@@ -6,9 +6,16 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 24px;
     }
+
+    &__more {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
 }
 
 .product-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     border-radius: $card-rad;
@@ -20,6 +27,21 @@
     &:hover {
         transform: translateY(-6px);
         box-shadow: 0 16px 30px -16px rgba(0, 0, 0, 0.35);
+    }
+
+    &__link {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        color: transparent;
+        text-indent: -9999px;
+        overflow: hidden;
+        pointer-events: auto;
+
+        &:focus-visible {
+            outline: 2px solid $brand_green;
+            outline-offset: -2px;
+        }
     }
 
     &__media {
@@ -36,6 +58,7 @@
     }
 
     &__body {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -59,6 +82,8 @@
     }
 
     &__controls {
+        position: relative;
+        z-index: 2;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -98,6 +123,8 @@
     }
 
     &__footer {
+        position: relative;
+        z-index: 2;
         margin-top: 12px;
 
         .button {
@@ -123,6 +150,15 @@
 
 @media (max-width: $bp_mobile) {
     .shop__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product-card__body {
+        padding: 10px;
+    }
+
+    .product-card__title {
+        font-size: 16px;
     }
 }

@@ -7,11 +7,12 @@
 ])
 
 <article class="product-card">
+    <a class="product-card__link" href="{{ $href }}" aria-label="{{ $title }}">{{ $title }}</a>
     <div class="product-card__media">
         <img src="{{ $image }}" alt="{{ $alt ?? $title }}" loading="lazy">
     </div>
     <div class="product-card__body">
-        <a class="product-card__title" href="{{ $href }}">{{ $title }}</a>
+        <div class="product-card__title">{{ $title }}</div>
         <div class="product-card__price">{{ $price }}</div>
 
         <div class="product-card__controls">

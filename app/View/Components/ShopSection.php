@@ -3,9 +3,9 @@
 namespace App\View\Components;
 
 use App\Models\Product;
-use Illuminate\Database\Eloquent\Collection;
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
 class ShopSection extends Component
@@ -14,7 +14,7 @@ class ShopSection extends Component
 
     public function __construct()
     {
-        $this->products = Product::all();
+        $this->products = Product::inRandomOrder()->limit(8)->get();
     }
 
     public function render(): View|Closure|string

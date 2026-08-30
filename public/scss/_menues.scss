@@ -1,109 +1,141 @@
-@use 'vars' as *;
+@use "vars" as *;
+@use "burger-icon";
 
-.side_menue_wrapper{
+.side-menu {
     position: fixed;
-    width: 0;
-    height: 0;
-    top:0;
-    right: 0;
+    inset: 0;
     z-index: 1000;
+    pointer-events: none;
 
-    &.active {
-        width: 100%;
-        height: 100%;
+    &[aria-hidden="false"] {
+        pointer-events: auto;
     }
 
-    .shadow {
-        background-color: #00000090;
-        width: 100%;
-        height: 100%;
-        left:0;
-        top:0;
-        z-index: 21;
+    &__shadow {
         position: absolute;
+        inset: 0;
+        background-color: $overlay_color;
         opacity: 0;
-        transition: $main_transition;
+        transition: opacity $main_transition;
     }
 
-    &.active .shadow{
-        opacity: 1;
-    }
-
-    .side_menue {
-        background-color: white;
+    &__panel {
+        position: absolute;
+        top: 0;
+        right: 0;
         width: 100%;
         max-width: 420px;
-        height:100%;
-        position: absolute;
-        right:-500px;
-        top:0;
-        z-index: 22;
-        transition: $main_transition;
-        box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
-        & * {
-            opacity: 0;
+        height: 100%;
+        background-color: #fff;
+        transform: translateX(100%);
+        transition: transform $main_transition;
+        box-shadow:
+            0 8px 10px -5px rgba(0, 0, 0, 0.2),
+            0 16px 24px 2px rgba(0, 0, 0, 0.14),
+            0 6px 30px 5px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+    }
+
+    &__inner {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex: 1 1 auto;
+    }
+
+    &__close {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        line-height: 0;
+    }
+
+    &__logo {
+        align-self: flex-end;
+        display: inline-block;
+
+        img {
+            display: block;
+            width: 160px;
+            height: auto;
+        }
+    }
+
+    &__logo--space {
+        margin-bottom: 20px;
+    }
+
+    &__puncts {
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        li {
+            margin-bottom: 10px;
+            text-align: right;
         }
 
-        .inner_wrapper {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: end;
-            justify-content: space-between;
+        a {
+            font-size: 18px;
+            transition: color $btn_transition;
 
-            .main_menu_puncts {
-                margin-top: 40px;
-                li {
-                    margin-bottom: 10px;
-                    text-align: right;
-                }
-                a {
-                    font-size: 18px;
-                    &:hover {
-                        color: $main_color;
-                    }
-                }
+            &:hover {
+                color: $brand_green;
             }
         }
     }
 
-    &.active .side_menue{
-        right:0;
-
-        & * {
-            opacity: 1;
-        }
+    &[aria-hidden="false"] &__shadow {
+        opacity: 1;
     }
 
+    &[aria-hidden="false"] &__panel {
+        transform: translateX(0);
+        visibility: visible;
+    }
 }
 
-.show_menue_button {
+.side-menu-toggle {
     position: fixed;
-    right:10px;
-    bottom:10px;
-    width:50px;
-    height:50px;
-    background-color: $main_color;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: $brand_green;
+    border: 1px solid #fff;
     border-radius: 50px;
-    border: 1px solid white;
-    background-image: url(../img/icon/menu_burger.svg);
-    background-repeat: no-repeat;
-    background-position: center;
     display: none;
+    align-items: center;
+    justify-content: center;
     z-index: 1000;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color $btn_transition;
 
     .icon-menu {
-        margin: auto;
-        width:25px;
+        width: 25px;
+
         span {
-            background-color: white;
+            background-color: #fff;
         }
+    }
+
+    &:hover {
+        background-color: $brand_green_hover;
     }
 }
 
-
-@media (max-width:768px) {
-    .show_menue_button {
+@media (max-width: $bp_tablet) {
+    .side-menu-toggle {
         display: flex;
     }
+}
+
+.is-menu-open {
+    overflow: hidden;
 }

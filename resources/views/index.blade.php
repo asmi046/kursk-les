@@ -36,16 +36,7 @@
     <x-advantages-section />
 
     {{-- ===================== КАТЕГОРИИ ТОВАРА ===================== --}}
-    <section id="categories" class="categories" aria-label="Категории товаров">
-        <div class="container">
-            <div class="categories__grid">
-                <x-cards.category-card :image="asset('/img/categories/cat_nabors.webp')" title="Наборы для творчества" :href="route('home') . '#shop'" />
-                <x-cards.category-card :image="asset('/img/categories/cat_razdel.webp')" title="Разделочные доски" :href="route('home') . '#shop'" />
-                <x-cards.category-card :image="asset('/img/categories/cat_torcevie.webp')" title="Торцевые изделия" :href="route('home') . '#shop'" />
-                <x-cards.category-card :image="asset('/img/categories/cat_podacha.webp')" title="Подставки и подача" :href="route('home') . '#shop'" />
-            </div>
-        </div>
-    </section>
+    <x-categories-section />
 
     {{-- ===================== ИНТЕРНЕТ-МАГАЗИН ===================== --}}
     <x-shop-section />

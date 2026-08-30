@@ -49,9 +49,12 @@
                         </li>
                     </ul>
 
-                    <div class="product__description">
-                        <div class="product__description-inner text_styles">{!! $product->description !!}</div>
-                        <button class="product__readmore" type="button" data-readmore-toggle>Читать полностью</button>
+                    <div class="product__description" data-readmore>
+                        <div class="product__description-inner text_styles" data-readmore-inner>{!! $product->description !!}</div>
+                        <button class="product__readmore" type="button"
+                            data-readmore-toggle
+                            data-text-open="Читать полностью"
+                            data-text-close="Свернуть">Читать полностью</button>
                     </div>
 
                     <ul class="product__specs">
@@ -80,9 +83,9 @@
 
                 <aside class="product__buy">
                     <div class="product__buy-top">
-                        <div class="product__qty">
+                        <div class="product__qty" data-qty-group>
                             <button class="product__qty-btn" type="button" data-qty="-">−</button>
-                            <input class="product__qty-input" type="number" name="qty" value="1" min="1">
+                            <input class="product__qty-input" type="number" name="qty" value="1" min="1" max="999">
                             <button class="product__qty-btn" type="button" data-qty="+">+</button>
                         </div>
                         <button class="product__add button" type="button">

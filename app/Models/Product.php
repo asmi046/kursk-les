@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
 {
@@ -33,4 +34,11 @@ class Product extends Model
         'rust_exist' => 'boolean',
         'galery' => 'array',
     ];
+
+    public function categories(): BelongsToMany
+    {
+        return $this->belongsToMany(Category::class, 'category_product')
+            ->withPivot('position')
+            ->orderBy('category_product.position');
+    }
 }

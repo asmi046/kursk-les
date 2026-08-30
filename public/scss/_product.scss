@@ -6,6 +6,17 @@
         grid-template-columns: 1fr 1.3fr 1fr;
         gap: 30px;
         align-items: start;
+        min-width: 0;
+    }
+
+    &__media,
+    &__slider-wrap {
+        min-width: 0;
+    }
+
+    &__description-inner {
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     &__slider-wrap {
@@ -172,6 +183,7 @@
     }
 
     &__buy {
+        box-sizing: border-box;
         background-color: $gray_bg_color;
         border-radius: $card_rad;
         padding: 24px;
@@ -350,6 +362,7 @@
     }
 
     .related__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 }

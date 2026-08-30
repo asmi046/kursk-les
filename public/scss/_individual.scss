@@ -122,3 +122,11 @@
         }
     }
 }
+
+@media (max-width: $bp_mobile) {
+    .individual {
+        &__inner {
+            padding: 10px;
+        }
+    }
+}

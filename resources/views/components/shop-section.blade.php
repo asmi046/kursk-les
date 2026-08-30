@@ -12,5 +12,9 @@
                 />
             @endforeach
         </div>
+
+        <div class="shop__more">
+            <a class="button" href="{{ route('catalog') }}">Все товары</a>
+        </div>
     </div>
 </section>

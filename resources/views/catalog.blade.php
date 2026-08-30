@@ -19,7 +19,17 @@
 
             <div class="catalog__inner">
                 <aside class="catalog__sidebar" aria-label="Фильтры">
-                    <x-catalog.filters />
+                    <button class="filters-toggle" type="button"
+                        data-filters-toggle aria-expanded="false"
+                        aria-controls="catalog-filters">
+                        <svg class="sprite_icon details__chevron" aria-hidden="true">
+                            <use xlink:href="#icon-chevron-down"></use>
+                        </svg>
+                        <span>Фильтры</span>
+                    </button>
+                    <div class="filters-collapse" id="catalog-filters" data-filters-collapse>
+                        <x-catalog.filters />
+                    </div>
                 </aside>
 
                 <div class="catalog__main">

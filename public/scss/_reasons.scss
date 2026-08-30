@@ -41,7 +41,6 @@
 
     &__media {
         background-color: #f3ebe9;
-        padding: 20px;
         border-radius: $card-rad;
     }
 
@@ -75,3 +74,12 @@
 //         }
 //     }
 // }
+
+@media (max-width: $bp_mobile) {
+    .reasons {
+        &__grid {
+            gap: 10px;
+            padding: 10px;
+        }
+    }
+}

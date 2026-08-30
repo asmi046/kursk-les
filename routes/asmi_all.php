@@ -11,4 +11,5 @@ Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
 Route::get('/restaurant-offer', [RestaurantOfferController::class, 'index'])->name('restaurant-offer');
 Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog');
+Route::get('/category/{slug}', [CatalogController::class, 'category'])->name('category.show');
 Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');

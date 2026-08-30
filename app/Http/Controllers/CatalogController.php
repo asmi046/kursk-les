@@ -2,35 +2,62 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
     public function index(Request $request)
     {
+        $tovars = $this->buildProductQuery($request)
+            ->paginate(9)
+            ->withQueryString();
+
+        return view('catalog', compact('tovars'));
+    }
+
+    public function category(Request $request, string $slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+
+        $tovars = $this->buildProductQuery($request, $category)
+            ->paginate(9)
+            ->withQueryString();
+
+        return view('category', [
+            'tovars' => $tovars,
+            'category' => $category,
+        ]);
+    }
+
+    private function buildProductQuery(Request $request, ?Category $category = null): Builder
+    {
         $query = Product::query();
 
+        if ($category) {
+            $query->whereHas('categories', function (Builder $q) use ($category) {
+                $q->where('categories.id', $category->id);
+            });
+        }
+
         if ($request->filled('material')) {
-            $materials = (array) $request->input('material');
-            $query->whereIn('material', $materials);
+            $query->whereIn('material', (array) $request->input('material'));
         }
 
         if ($request->filled('color')) {
-            $colors = (array) $request->input('color');
-            $query->whereIn('color', $colors);
+            $query->whereIn('color', (array) $request->input('color'));
         }
 
         if ($request->filled('handle_exist')) {
             $handleValues = (array) $request->input('handle_exist');
-            $handleBool = in_array('yes', $handleValues, true);
-            $query->where('handle_exist', $handleBool);
+            $query->where('handle_exist', in_array('yes', $handleValues, true));
         }
 
         if ($request->filled('rust_exist')) {
             $rustValues = (array) $request->input('rust_exist');
-            $rustBool = in_array('yes', $rustValues, true);
-            $query->where('rust_exist', $rustBool);
+            $query->where('rust_exist', in_array('yes', $rustValues, true));
         }
 
         $sort = $request->input('sort', 'default');
@@ -48,8 +75,6 @@ class CatalogController extends Controller
                 $query->orderBy('id', 'asc');
         }
 
-        $tovars = $query->paginate(9)->withQueryString();
-
-        return view('catalog', compact('tovars'));
+        return $query;
     }
 }
