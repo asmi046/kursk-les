@@ -8,6 +8,7 @@ class Project extends Model
 {
     public $fillable = [
         'title',
+        'slug',
         'description',
         'img',
         'gallery',
@@ -16,4 +17,9 @@ class Project extends Model
     protected $casts = [
         'gallery' => 'array',
     ];
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }

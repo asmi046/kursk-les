@@ -150,6 +150,27 @@ a.button--white:hover {
         color: #fff;
     }
 
+    &--round {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        border: 2px solid $accent_green;
+        background-color: #fff;
+
+        .sprite_icon {
+            stroke: $accent_green;
+        }
+
+        &:hover {
+            background-color: $accent_green;
+            border-color: $accent_green;
+
+            .sprite_icon {
+                stroke: #fff;
+            }
+        }
+    }
+
     &:disabled {
         opacity: 0.4;
         cursor: default;

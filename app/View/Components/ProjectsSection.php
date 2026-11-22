@@ -3,9 +3,9 @@
 namespace App\View\Components;
 
 use App\Models\Project;
-use Illuminate\Database\Eloquent\Collection;
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
 class ProjectsSection extends Component
@@ -14,7 +14,7 @@ class ProjectsSection extends Component
 
     public function __construct()
     {
-        $this->projects = Project::all();
+        $this->projects = Project::query()->orderBy('id')->take(3)->get();
     }
 
     public function render(): View|Closure|string

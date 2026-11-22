@@ -1,3 +1,9 @@
+@props([
+    'title',
+    'parentTitle' => null,
+    'parentHref' => null,
+])
+
 <div class="uni_breadcrumbs">
     <div class="_container">
 
@@ -9,24 +15,13 @@
                 </a>
             </span>
 
-
-
-            @if (Request::route()->named('search-tovar'))
+            @if ($parentTitle && $parentHref)
                 <span class="sep"> / </span>
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a title="{{$article}}" itemprop="item" href="{{route('search', ['search'=> $article])}}">
-                        <span itemprop="name">{{ $article }}</span>
+                    <a title="{{ $parentTitle }}" itemprop="item" href="{{ $parentHref }}">
+                        <span itemprop="name">{{ $parentTitle }}</span>
                         <meta itemprop="position" content="1">
                     </a>
-                </span>
-
-                <span class="sep"> / </span>
-
-                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="finish">
-                    <span title="{{ $brand }}" itemprop="item">
-                        <span itemprop="name">{{ $brand }}</span>
-                        <meta itemprop="position" content="2">
-                    </span>
                 </span>
             @endif
 
@@ -35,7 +30,7 @@
                     <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="finish">
                         <span title="{{ $title }}" itemprop="item">
                             <span itemprop="name">{{ $title }}</span>
-                            <meta itemprop="position" content="1">
+                            <meta itemprop="position" content="{{ $parentTitle ? 2 : 1 }}">
                         </span>
                     </span>
             @endif

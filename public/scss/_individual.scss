@@ -87,31 +87,6 @@
         margin-top: 20px;
         justify-content: flex-end;
     }
-
-    .slider-nav--round {
-        width: 50px;
-        height: 50px;
-        padding: 0;
-        border-radius: 50%;
-        background-color: #fff;
-        border: 2px solid #367a3a;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        .sprite_icon {
-            stroke: #367a3a;
-        }
-
-        &:hover {
-            background-color: #367a3a;
-            border-color: #367a3a;
-
-            .sprite_icon {
-                stroke: #fff;
-            }
-        }
-    }
 }
 
 @media (max-width: $bp_tablet) {

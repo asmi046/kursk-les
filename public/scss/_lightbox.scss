@@ -1,0 +1,89 @@
+@use "vars" as *;
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+
+    &[hidden] {
+        display: none;
+    }
+
+    &__figure {
+        margin: 0;
+        max-width: 90vw;
+        max-height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__img {
+        max-width: 100%;
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: $card_rad;
+    }
+
+    &__close,
+    &__nav {
+        position: absolute;
+        background: none;
+        border: 0;
+        color: #fff;
+        font-size: 48px;
+        line-height: 1;
+        cursor: pointer;
+        padding: 10px;
+        opacity: 0.8;
+        transition: $btn_transition;
+
+        &:hover {
+            opacity: 1;
+            color: $brand_green;
+        }
+    }
+
+    &__close {
+        top: 20px;
+        right: 30px;
+    }
+
+    &__nav {
+        top: 50%;
+        transform: translateY(-50%);
+
+        &--prev {
+            left: 20px;
+        }
+
+        &--next {
+            right: 20px;
+        }
+    }
+}
+
+@media (max-width: $bp_mobile) {
+    .lightbox {
+        padding: 20px;
+
+        &__nav {
+            font-size: 36px;
+
+            &--prev {
+                left: 5px;
+            }
+
+            &--next {
+                right: 5px;
+            }
+        }
+    }
+}

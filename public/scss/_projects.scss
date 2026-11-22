@@ -20,11 +20,16 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
     }
+
+    &__all {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
 }
 
 .projects {
     background-color: #f7f5f1;
-    padding: 40px 0;
 
     .section-head {
         margin-bottom: 40px;
@@ -34,6 +39,12 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
+    }
+
+    &__all {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
     }
 }
 
@@ -108,5 +119,34 @@
 
     .project-card {
         padding: 10px;
+    }
+}
+
+
+#project {
+    .product__inner {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .product__description {
+        padding: 0;
+        border-top: 0;
+        border-bottom: 0;
+    }
+}
+
+.project__slider-col {
+    min-width: 0;
+}
+
+@media (max-width: $bp_tablet) {
+    #project .product__inner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: $bp_mobile) {
+    #project .product__inner {
+        grid-template-columns: 1fr;
     }
 }

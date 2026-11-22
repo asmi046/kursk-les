@@ -57,10 +57,16 @@ function initProductSlider(root = document) {
         return;
     }
 
-    new KeenSlider(slider, {
+    const instance = new KeenSlider(slider, {
         loop: true,
         slides: { perView: 1, spacing: 0 },
     });
+
+    const prevBtn = root.querySelector('[data-slider-prev="product-slider"]');
+    const nextBtn = root.querySelector('[data-slider-next="product-slider"]');
+
+    prevBtn?.addEventListener('click', () => instance.prev());
+    nextBtn?.addEventListener('click', () => instance.next());
 }
 
 export function initSliders(root = document) {

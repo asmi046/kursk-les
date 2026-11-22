@@ -5,6 +5,7 @@ import CatalogFilters from './modules/catalog-filters.js';
 import { initSliders } from './modules/sliders.js';
 import { initReadmore } from './modules/product-readmore.js';
 import { initQty } from './modules/product-qty.js';
+import { initLightbox } from './modules/lightbox.js';
 
 const init = () => {
     new SideMenu('#main_side_menue');
@@ -12,6 +13,7 @@ const init = () => {
     initSliders();
     initReadmore();
     initQty();
+    initLightbox();
 };
 
 if (document.readyState === 'loading') {
