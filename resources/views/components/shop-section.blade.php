@@ -5,6 +5,7 @@
         <div class="shop__grid">
             @foreach($products as $product)
                 <x-cards.product-card
+                    :product="$product"
                     :image="Storage::url($product->img)"
                     :title="$product->title"
                     :price="number_format($product->price, 0, '', ' ') . ' ₽'"

@@ -27,6 +27,7 @@ class MenuSeeder extends Seeder
             ['menu_name' => 'Информация в подвале', 'title' => 'Наши проекты', 'order' => 2, 'lnk' => '#'],
             ['menu_name' => 'Информация в подвале', 'title' => 'О нас', 'order' => 3, 'lnk' => '#'],
             ['menu_name' => 'Информация в подвале', 'title' => 'Преимущества', 'order' => 4, 'lnk' => '#'],
+            ['menu_name' => 'Информация в подвале', 'title' => 'Оплата и доставка', 'order' => 5, 'lnk' => '/pages/payment-delivery'],
         ]);
     }
 }

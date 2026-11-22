@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
-
 use App\Models\Product;
+use Illuminate\Database\Seeder;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProductSeeder extends Seeder
 {
@@ -90,6 +89,7 @@ class ProductSeeder extends Seeder
         ];
 
         foreach ($products as $data) {
+            $data['colors'] ??= ['Классический', 'Коричневый', 'Шоколадный', 'Графит'];
             Product::create($data);
         }
     }
@@ -105,7 +105,7 @@ class ProductSeeder extends Seeder
 
         foreach ($files as $path => $source) {
             if (file_exists($source)) {
-                Storage::disk('public')->putFileAs(dirname($path), new \Illuminate\Http\File($source), basename($path));
+                Storage::disk('public')->putFileAs(dirname($path), new File($source), basename($path));
             }
         }
     }

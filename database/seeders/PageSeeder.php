@@ -27,6 +27,11 @@ class PageSeeder extends Seeder
             'slug' => 'cookie',
             'file' => 'cookie.html',
         ],
+        [
+            'title' => 'Оплата и доставка',
+            'slug' => 'payment-delivery',
+            'file' => 'payment-delivery.html',
+        ],
     ];
 
     public function run(): void

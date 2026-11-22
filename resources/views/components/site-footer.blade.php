@@ -46,6 +46,8 @@
                         </a>
                     @endif
                 </div>
+
+                <x-pay-icons />
             </div>
         </div>
 

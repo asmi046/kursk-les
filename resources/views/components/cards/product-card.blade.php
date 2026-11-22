@@ -4,6 +4,7 @@
     'title',
     'price',
     'href' => '#',
+    'product' => null,
 ])
 
 <article class="product-card">
@@ -27,10 +28,26 @@
         </div>
 
         <div class="product-card__footer">
-            <a class="button" href="{{ $href }}" aria-label="Добавить в корзину: {{ $title }}">
-                <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-bag"></use></svg>
-                <span>В корзину</span>
-            </a>
+            @if ($product)
+                @php
+                    $cartProduct = [
+                        'id' => $product->id,
+                        'url' => route('product.show', $product->slug),
+                        'img' => $product->img ? asset('storage/' . $product->img) : null,
+                        'title' => $product->title,
+                        'price' => (float) $product->price,
+                        'characteristic' => trim($product->type . ', ' . $product->material, ' ,'),
+                        'colors' => $product->colors ?? [],
+                    ];
+                @endphp
+                <div class="product-card__to-cart" data-cart-add='@json($cartProduct)'>
+                </div>
+            @else
+                <a class="button" href="{{ $href }}" aria-label="Добавить в корзину: {{ $title }}">
+                    <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-bag"></use></svg>
+                    <span>В корзину</span>
+                </a>
+            @endif
         </div>
     </div>
 </article>

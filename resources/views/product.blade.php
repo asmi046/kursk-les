@@ -88,12 +88,19 @@
                             <input class="product__qty-input" type="number" name="qty" value="1" min="1" max="999">
                             <button class="product__qty-btn" type="button" data-qty="+">+</button>
                         </div>
-                        <button class="product__add button" type="button">
-                            <svg class="sprite_icon" aria-hidden="true">
-                                <use xlink:href="#icon-bag"></use>
-                            </svg>
-                            <span>В корзину</span>
-                        </button>
+                        @php
+                            $cartProduct = [
+                                'id' => $product->id,
+                                'url' => route('product.show', $product->slug),
+                                'img' => $product->img ? asset('storage/' . $product->img) : null,
+                                'title' => $product->title,
+                                'price' => (float) $product->price,
+                                'characteristic' => trim($product->type . ', ' . $product->material, ' ,'),
+                                'colors' => $product->colors ?? [],
+                            ];
+                        @endphp
+                        <div data-cart-add='@json($cartProduct)' data-qty-selector=".product__buy-top .product__qty">
+                        </div>
                     </div>
 
                     <div class="product__actions">
@@ -113,9 +120,10 @@
 
                     <h3 class="product__color-title">Цвет</h3>
                     <div class="product__color-list">
-                        @foreach (['Классический', 'Коричневый', 'Шоколадный', 'Графит'] as $color)
+                        @foreach (($product->colors ?? []) as $color)
                             <label class="product__color-option">
-                                <input type="checkbox" class="product__color-checkbox" value="{{ $color }}">
+                                <input type="radio" class="product__color-checkbox" name="product-color"
+                                    value="{{ $color }}" @if ($loop->first) checked @endif>
                                 <span class="product__color-mark"></span>
                                 <span>{{ $color }}</span>
                             </label>
@@ -132,7 +140,7 @@
             <h2 class="section-head">Похожие товары</h2>
             <div class="related__grid">
                 @foreach ($related as $item)
-                    <x-cards.product-card :image="Storage::url($item->img)" :title="$item->title" :price="number_format($item->price, 0, '', ' ') . ' ₽'" :href="route('product.show', ['slug' => $item->slug])" />
+                    <x-cards.product-card :product="$item" :image="Storage::url($item->img)" :title="$item->title" :price="number_format($item->price, 0, '', ' ') . ' ₽'" :href="route('product.show', ['slug' => $item->slug])" />
                 @endforeach
             </div>
         </div>

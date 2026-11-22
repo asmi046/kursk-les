@@ -43,6 +43,7 @@
                                     : '#';
                             @endphp
                             <x-cards.product-card
+                                :product="$product"
                                 :image="Storage::url($product->img)"
                                 :title="$product->title"
                                 :price="number_format($product->price, 0, '', ' ') . ' ₽'"

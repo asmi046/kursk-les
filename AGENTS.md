@@ -2,8 +2,8 @@
 
 Laravel 13 (PHP 8.3+, Blade) + Vite 8 (Sass, keen-slider, vanilla ES-модули).
 Tailwind CSS 4 установлен, но в вёрстке **не используется** — вся стилизация на SCSS.
-SPA-фреймворков в рантайме нет: `@vitejs/plugin-vue` есть в `vite.config.js`, но
-`.vue`-файлов в проекте нет, JS — обычные модули в `resources/js/modules/`.
+Vue 3 подключён (`@vitejs/plugin-vue`, пакет `vue`) и используется **только для корзины** —
+модули в `resources/js/cart/`, остальной JS — обычные модули в `resources/js/modules/`.
 
 Ключевые пакеты: `laravel/framework ^13.8`, `asmi046/site_skelet ^1.0` (вендорный
 «скелет» сайта: SEO, меню, контакты, хелперы), dev — `laravel/boost ^2.2`,
@@ -155,6 +155,32 @@ middleware `web`. Имена: `home`, `contacts`, `restaurant-offer`, `catalog`,
   оверлей со всеми картинками контейнера. Навигация: стрелки, ←/→, Esc, клик по
   подложке закрывает. `data-lightbox-group="имя"` объединяет несколько контейнеров
   в одну галерею.
+
+## Корзина и заказы
+
+- Корзина — сессионная (`CartService`, биндинг в `AppServiceProvider`), позиция =
+  `product_id + color` (один товар можно заказать в разных цветах). Цвета товара —
+  JSON-колонка `products.colors` (миграция `add_colors_to_products_table`), сидеры
+  `RealProductSeeder`/`ProductSeeder` заполняют дефолтный набор цветов.
+- Роуты — `routes/cart.php` (подключён в `bootstrap/app.php`): страницы `cart`/`cart.thanks`,
+  JSON API `cart.api.*` (`/cart/api/*`), эндпоинты доставки `delivery.*` (`/delivery/*`).
+- Vue-фронт: `resources/js/cart/` — общий реактивный store (`store.js`) и API на fetch
+  (`api.js`, CSRF из `<meta name="_token">`); монтируется из `resources/js/cart/index.js`,
+  подключённого в `app.js`, по data-атрибутам: `data-cart-add` (кнопка+модалка на карточке
+  и странице товара), `data-cart-counter` (виджет в шапке), `#cart_app` (страница корзины).
+- СДЭК: `CdekService` (OAuth-токен в кэше, песочница через `CDEK_BASE_URL` в `config/cdek.php`),
+  регистрация накладной — `CdekOrderBuilder` + listener `RegisterCdekOrder` по событию
+  `OrderCreated`. Виджет ПВЗ — Яндекс.Карта (`resources/js/cart/composables/yandexMaps.js`,
+  ключ опционален: `YANDEX_MAP_KEY`).
+- Оформление: `CheckoutRequest` → `CheckoutData`/`DeliveryData` (DTO) → `OrderService::checkout`
+  (транзакция, `DB::afterCommit` → событие `OrderCreated`). Оповещения — queued listener
+  `SendOrderEmail` на адреса из `ORDER_NOTIFY_EMAILS` (`config/order.php`, массив).
+- ОПЛАТА (YooKassa) закомментирована в `CheckoutController`/`OrderService`/`routes/cart.php`
+  до подключения боевых доступов (см. инструкции в комментариях).
+- Pay-иконки: цветные — в корзине (data-pay-icons из `cart/index.blade.php`), монохромные —
+  компонент `x-pay-icons` в `.site-footer__contacts`. Стили — `public/scss/_cart.scss`.
+- ВАЖНО: `bootstrap/app.php` `shouldRenderJsonWhen` должен включать `cart/api/*` и `delivery/*`,
+  иначе ошибки этих endpoint'ов рендерятся редиректом вместо JSON.
 
 ## Хлебные крошки
 

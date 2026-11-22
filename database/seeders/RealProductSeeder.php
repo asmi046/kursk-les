@@ -526,6 +526,7 @@ class RealProductSeeder extends Seeder
         ];
 
         foreach ($products as $data) {
+            $data['colors'] ??= ['Классический', 'Коричневый', 'Шоколадный', 'Графит'];
             Product::create($data);
         }
     }

@@ -25,7 +25,8 @@
     <script>
         window.Laravel = {
             assetUrl: '{{ asset('') }}',
-            storageUrl: '{{ Storage::url('') }}'
+            storageUrl: '{{ Storage::url('') }}',
+            yandexMapKey: '{{ config('services.yandex_map.key') }}'
         };
     </script>
 </head>
