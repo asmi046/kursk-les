@@ -17,14 +17,21 @@
         <div class="product-card__price">{{ $price }}</div>
 
         <div class="product-card__controls">
-            <button class="product-card__control" type="button" aria-label="В избранное">
-                <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-favorite"></use></svg>
-                <span>В избранное</span>
-            </button>
-            <button class="product-card__control" type="button" aria-label="Сравнить">
-                <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-compare"></use></svg>
-                <span>Сравнить</span>
-            </button>
+            @if ($product)
+                <div data-list-toggle data-type="favorite" data-variant="card"
+                    data-product-id="{{ $product->id }}"></div>
+                <div data-list-toggle data-type="compare" data-variant="card"
+                    data-product-id="{{ $product->id }}"></div>
+            @else
+                <button class="product-card__control" type="button" aria-label="В избранное">
+                    <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-favorite"></use></svg>
+                    <span>В избранное</span>
+                </button>
+                <button class="product-card__control" type="button" aria-label="Сравнить">
+                    <svg class="sprite_icon" aria-hidden="true" focusable="false"><use xlink:href="#icon-compare"></use></svg>
+                    <span>Сравнить</span>
+                </button>
+            @endif
         </div>
 
         <div class="product-card__footer">

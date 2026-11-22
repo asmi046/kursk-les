@@ -6,6 +6,8 @@ use App\Events\OrderCreated;
 use App\Listeners\RegisterCdekOrder;
 use App\Listeners\SendOrderEmail;
 use App\Services\CartService;
+use App\Services\ProductList\CompareService;
+use App\Services\ProductList\FavoriteService;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(CartService::class, fn ($app) => new CartService($app['session.store']));
+        $this->app->bind(FavoriteService::class, fn ($app) => new FavoriteService($app['session.store']));
+        $this->app->bind(CompareService::class, fn ($app) => new CompareService($app['session.store']));
     }
 
     /**

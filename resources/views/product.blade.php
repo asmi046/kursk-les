@@ -104,18 +104,10 @@
                     </div>
 
                     <div class="product__actions">
-                        <button class="product__action" type="button">
-                            <svg class="sprite_icon" aria-hidden="true">
-                                <use xlink:href="#icon-favorite"></use>
-                            </svg>
-                            <span>В избранное</span>
-                        </button>
-                        <button class="product__action" type="button">
-                            <svg class="sprite_icon" aria-hidden="true">
-                                <use xlink:href="#icon-compare"></use>
-                            </svg>
-                            <span>В сравнение</span>
-                        </button>
+                        <div class="product__actions-mount" data-list-toggle data-type="favorite"
+                            data-variant="product" data-product-id="{{ $product->id }}"></div>
+                        <div class="product__actions-mount" data-list-toggle data-type="compare"
+                            data-variant="product" data-product-id="{{ $product->id }}"></div>
                     </div>
 
                     <h3 class="product__color-title">Цвет</h3>

@@ -11,7 +11,10 @@
                 </nav>
             </div>
 
-            <div class="site-header__cart" data-cart-counter></div>
+            <div class="site-header__lists">
+                <div class="site-header__list-badges" data-header-lists></div>
+                <div class="site-header__cart" data-cart-counter></div>
+            </div>
 
             <div class="site-header__feedback">
                 <a class="button button--light" href="#">Обратная связь</a>

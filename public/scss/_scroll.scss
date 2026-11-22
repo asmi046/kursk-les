@@ -6,6 +6,11 @@
 	background-color: #f9f9fd;
 }
 
+::-webkit-scrollbar:horizontal {
+	overflow-x: scroll;
+	height: 7px;
+}
+
 ::-webkit-scrollbar-thumb {
 	background-color: grey;
 }

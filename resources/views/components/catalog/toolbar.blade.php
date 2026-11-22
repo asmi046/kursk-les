@@ -27,10 +27,10 @@
         </div>
     </div>
 
-    <a class="toolbar__compare button button--outline" href="#">
+    <a class="toolbar__compare button button--outline" href="{{ route('compare.index') }}">
         <svg class="sprite_icon" aria-hidden="true">
             <use xlink:href="#icon-compare"></use>
         </svg>
-        <span>Сравнение товаров (0)</span>
+        <span>Сравнение товаров (<span data-compare-toolbar data-count="0">0</span>)</span>
     </a>
 </form>
