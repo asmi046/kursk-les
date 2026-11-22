@@ -15,4 +15,6 @@ return [
 
     'subject' => 'Новый заказ на сайте',
 
+    'feedback_subject' => env('FEEDBACK_SUBJECT', 'Заявка на обратную связь с сайта'),
+
 ];

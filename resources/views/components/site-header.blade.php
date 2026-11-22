@@ -17,7 +17,7 @@
             </div>
 
             <div class="site-header__feedback">
-                <a class="button button--light" href="#">Обратная связь</a>
+                <a class="button button--light" href="#" data-feedback-open>Обратная связь</a>
             </div>
 
             <div class="site-header__actions">

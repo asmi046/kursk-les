@@ -48,6 +48,12 @@
     }
 }
 
+@media (max-width: $bp_mobile) {
+    .list-counter {
+        display: none;
+    }
+}
+
 // Обёртки монтирования кнопок «В избранное / В сравнение»
 .product__actions-mount,
 .product-card__controls [data-list-toggle] {

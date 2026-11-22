@@ -1,0 +1,115 @@
+@use "vars" as *;
+
+// ===== Модальное окно обратной связи =====
+.feedback-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 11000;
+    display: flex;
+    padding: 0 16px;
+    background-color: $overlay_color;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    &[hidden] {
+        display: none;
+    }
+
+    &__dialog {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        margin: auto;
+        padding: 40px;
+        border-radius: $card_rad;
+        background-color: #fff;
+        color: $black_color;
+        box-sizing: border-box;
+
+        @media screen and (max-width: $bp_mobile) {
+            padding: 30px 20px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        color: $black_color;
+
+        .sprite_icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        margin: 0 0 24px;
+        font-size: $fs_h3;
+        font-weight: $fw_medium;
+    }
+
+    &__result {
+        padding: 16px;
+        border-radius: $box_border_rad;
+        font-size: $fs_base;
+
+        &--success {
+            background-color: $light_bg_color;
+            color: $brand_green;
+        }
+
+        &--error {
+            background-color: crimson;
+            color: #fff;
+        }
+    }
+}
+
+// ===== Форма внутри модального окна =====
+.feedback-form {
+    &__row {
+        margin-bottom: 16px;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid $gray_border_color;
+        border-radius: $box_border_rad;
+        font-size: $fs_base;
+        box-sizing: border-box;
+    }
+
+    &__consents {
+        margin-top: 20px;
+
+        .cart-consents__item a {
+            color: $brand_green;
+        }
+    }
+
+    &__error {
+        margin: 4px 0 12px;
+        padding: 8px 14px;
+        border-radius: $box_border_rad;
+        background-color: crimson;
+        color: #fff;
+        font-size: $fs_small;
+
+        &[hidden] {
+            display: none;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        margin-top: 24px;
+    }
+}

@@ -6,6 +6,7 @@ import { initSliders } from './modules/sliders.js';
 import { initReadmore } from './modules/product-readmore.js';
 import { initQty } from './modules/product-qty.js';
 import { initLightbox } from './modules/lightbox.js';
+import { initFeedback } from './modules/feedback.js';
 import './cart/index.js';
 import './product-lists/index.js';
 
@@ -16,6 +17,7 @@ const init = () => {
     initReadmore();
     initQty();
     initLightbox();
+    initFeedback();
 };
 
 if (document.readyState === 'loading') {

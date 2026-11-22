@@ -181,5 +181,28 @@ html {
         &__logo {
             width: 120px;
         }
+
+        &__actions {
+            gap: 8px;
+        }
+
+        &__messenger {
+            width: 32px;
+            height: 32px;
+
+            .sprite_icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        &__messenger--call .sprite_icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        &__list-badges {
+            display: none;
+        }
     }
 }
