@@ -8,7 +8,7 @@
                     :image="Storage::url($product->img)"
                     :title="$product->title"
                     :price="number_format($product->price, 0, '', ' ') . ' ₽'"
-                    href="#"
+                    :href="route('product.show', ['slug' => $product->slug])"
                 />
             @endforeach
         </div>

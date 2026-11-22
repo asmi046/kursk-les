@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             CertificateSeeder::class,
             AboutBlockSeeder::class,
             ProjectSeeder::class,
+            PageSeeder::class,
             RestaurantOfferSeeder::class,
             // ProductSeeder::class,
             RealProductSeeder::class,

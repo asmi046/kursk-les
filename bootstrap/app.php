@@ -15,6 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->group(base_path('routes/asmi_all.php'));
             Route::middleware('web')
                 ->group(base_path('routes/projects.php'));
+            Route::middleware('web')
+                ->group(base_path('routes/pages.php'));
         }
     )
     ->withMiddleware(function (Middleware $middleware): void {

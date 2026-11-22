@@ -53,5 +53,11 @@
             <span>© {{ date('Y') }} {{ contact('company_name') ?? 'Курский Лес' }}. Все права защищены.</span>
             <span>Изделия из натурального дерева ручной работы</span>
         </div>
+
+        <nav class="site-footer__pages" aria-label="Правовая информация">
+            <a href="{{ route('page.show', 'personal-data-policy') }}">Политика в области обработки персональных данных</a>
+            <a href="{{ route('page.show', 'personal-data-consent') }}">Согласие на обработку персональных данных</a>
+            <a href="{{ route('page.show', 'cookie') }}">О файлах cookie</a>
+        </nav>
     </div>
 </footer>
